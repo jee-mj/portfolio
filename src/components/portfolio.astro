@@ -1,0 +1,73 @@
+<section class="w-full h-full flex-col z-20 hidden" id="portfolio">
+  <div
+    class="w-full h-[36vh] flex flex-row p-4 pb-0 transition-all duration-500"
+    id="portfolio-label"
+  >
+    <div id="topLeft" class="w-full h-full flex flex-row items-center">
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
+        class="font-smooch border border-solid shadow-sm hover:w-full
+          hover:bg-secondary hover:text-white active:text-secondary transition-all duration-200
+          bg-primary text-black border-white shadow-black
+          w-1/2 h-full content-center
+          grid"
+        id="portfolio-link">Portfolio</a
+      >
+      <div class="h-full"></div>
+    </div>
+  </div>
+  <div
+    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto"
+    id="portfolio-content"
+  >
+    <h3 class="text-6xl">1. Portfolio: General Information</h3>
+    <strong>Heading</strong>: Portfolio Overview
+    <strong>Subheadings</strong>:
+    <p>
+      - Personal Statement: A brief introduction about yourself and your
+      professional interests.
+    </p>
+    <p>
+      - Skills Overview: Quick list or visual representation of your key skills.
+    </p>
+    <p>- Highlights: Noteworthy projects or achievements.</p>
+  </div>
+</section>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<script>
+  const portfolioLink = document.getElementById("portfolio-link");
+
+  // Event listener for section load
+  document.addEventListener("sectionLoadEvent", function () {
+    setTimeout(() => {
+      portfolioLink.classList.remove("w-1/2");
+      portfolioLink.classList.remove("hover:w-full");
+      portfolioLink.classList.add("w-full");
+      setTimeout(() => {
+        document
+          .getElementById("portfolio-content")
+          .classList.remove("text-white");
+      }, 150);
+    }, 500);
+  });
+
+  // Event listener for section unload
+  document.addEventListener("sectionUnloadEvent", function () {
+    document.getElementById("portfolio-content").classList.add("text-white");
+    portfolioLink.classList.remove("w-full");
+    portfolioLink.classList.add("w-1/2");
+    document.getElementById("portfolio-label").classList.add("w-full");
+    document.getElementById("portfolio-label").classList.remove("w-1/2");
+    setTimeout(() => {
+      portfolioLink.classList.add("hover:w-full");
+    }, 1500);
+  });
+</script>

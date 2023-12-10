@@ -1,0 +1,72 @@
+---
+import { Content } from "../content/work.md";
+---
+
+<section class="w-full h-full flex-row z-20 hidden" id="work">
+  <div
+    class="w-full h-full flex flex-col p-4 pr-0 transition-all duration-500"
+    id="work-label"
+  >
+    <div id="topLeft" class="w-full h-full flex flex-col-reverse items-center">
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
+        class="font-smooch border border-solid
+        hover:bg-secondary hover:text-white active:text-secondary transition-all duration-200
+        border-white bg-primary text-black shadow-sm shadow-black
+        w-full h-1/2 grid content-center"
+        id="work-link">Work</a
+      >
+    </div>
+    <div id="work-space" class="w-full h-full transition-all duration-500">
+    </div>
+  </div>
+  <div
+    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto"
+    id="work-content"
+  >
+    <Content />
+  </div>
+</section>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<script>
+  const workLink = document.getElementById("work-link");
+  const workSpace = document.getElementById("work-space");
+
+  // Event listener for section load
+  document.addEventListener("sectionLoadEvent", function () {
+    setTimeout(() => {
+      workLink.classList.remove("h-1/2");
+      workLink.classList.add("h-full");
+      setTimeout(() => {
+        workSpace.classList.remove("h-full");
+        workSpace.classList.add("h-0");
+      }, 150);
+      setTimeout(() => {
+        document.getElementById("work-label").classList.remove("w-full");
+        document.getElementById("work-label").classList.add("w-1/2");
+        document.getElementById("work-content").classList.remove("text-white");
+      }, 150);
+    }, 500);
+  });
+
+  // Event listener for section unload
+  document.addEventListener("sectionUnloadEvent", function () {
+    setTimeout(() => {
+      workSpace.classList.remove("h-0");
+      workSpace.classList.add("h-full");
+    }, 150);
+    workLink.classList.remove("h-full");
+    workLink.classList.add("h-1/2");
+    document.getElementById("work-label").classList.add("w-full");
+    document.getElementById("work-label").classList.remove("w-1/2");
+    document.getElementById("work-content").classList.add("text-white");
+  });
+</script>

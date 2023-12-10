@@ -1,0 +1,71 @@
+---
+import { Content } from "../content/education.md";
+---
+
+<section class="w-full h-full flex-row z-20 hidden" id="education">
+  <div
+    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto"
+    id="education-content"
+  >
+    <Content />
+  </div>
+  <div
+    class="w-full h-full flex flex-col p-4 pl-0 transition-all duration-500"
+    id="education-label"
+  >
+    <div id="education-space" class="w-full h-full transition-all duration-500">
+    </div>
+    <div id="bottomRight" class="w-full h-full flex flex-col items-center">
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
+        class="font-smooch border border-solid
+        hover:bg-secondary hover:text-white active:text-secondary transition-all duration-500
+        border-white w-full h-1/2 grid content-center bg-primary text-black shadow-sm shadow-black"
+        id="education-link">Study</a
+      >
+    </div>
+  </div>
+</section>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<script>
+  const educationLink = document.getElementById("education-link");
+  const educationSpace = document.getElementById("education-space");
+
+  // Event listener for section load
+  document.addEventListener("sectionLoadEvent", function () {
+    setTimeout(() => {
+      educationLink.classList.remove("h-1/2");
+      educationLink.classList.add("h-full");
+      setTimeout(() => {
+        educationSpace.classList.remove("h-full");
+        educationSpace.classList.add("h-0");
+      }, 150);
+      setTimeout(() => {
+        document.getElementById("education-label").classList.remove("w-full");
+        document.getElementById("education-label").classList.add("w-1/2");
+        document
+          .getElementById("education-content")
+          .classList.remove("text-white");
+      }, 150);
+    }, 500);
+  });
+
+  // Event listener for section unload
+  document.addEventListener("sectionUnloadEvent", function () {
+    document.getElementById("education-content").classList.add("text-white");
+    educationSpace.classList.remove("h-0");
+    educationSpace.classList.add("h-full");
+    educationLink.classList.remove("h-full");
+    educationLink.classList.add("h-1/2");
+    document.getElementById("education-label").classList.add("w-full");
+    document.getElementById("education-label").classList.remove("w-1/2");
+  });
+</script>

@@ -1,0 +1,66 @@
+---
+import { Content } from "../content/signature.md";
+---
+
+<section class="w-full h-full flex-col z-20 hidden" id="signature">
+  <div
+    class="w-full h-full p-4 pb-0 text-white transition-all duration-600 inline-block overflow-y-auto"
+    id="signature-content"
+  >
+    <Content />
+  </div>
+  <div
+    class="w-full h-[36vh] flex flex-row-reverse p-4 transition-all duration-500"
+    id="signature-label"
+  >
+    <a
+      style="font-size: clamp(2em, 5vw, 4em); padding-right: clamp(0.5em,10vw,60em);"
+      class="hover:bg-secondary hover:text-white active:text-secondary
+        transition-all duration-500 hover:w-full
+        font-smooch border border-solid border-white
+        w-1/2 h-full
+        grid content-center justify-end
+        bg-primary text-black shadow-sm shadow-black"
+      id="signature-link">jee-mj</a
+    >
+    <div id="signature-space" class="h-full w-auto"></div>
+  </div>
+</section>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<script>
+  const signatureLink = document.getElementById("signature-link");
+
+  // Event listener for section load
+  document.addEventListener("sectionLoadEvent", function () {
+    setTimeout(() => {
+      signatureLink.classList.remove("w-1/2");
+      signatureLink.classList.remove("hover:w-full");
+      signatureLink.classList.add("w-full");
+      setTimeout(() => {
+        document
+          .getElementById("signature-content")
+          .classList.remove("text-white");
+      }, 150);
+    }, 500);
+  });
+
+  // Event listener for section unload
+  document.addEventListener("sectionUnloadEvent", function () {
+    document.getElementById("signature-content").classList.add("text-white");
+    signatureLink.classList.remove("w-full");
+    signatureLink.classList.add("w-1/2");
+    setTimeout(() => {
+      signatureLink.classList.add("hover:w-full");
+    }, 1500);
+    document.getElementById("signature-label").classList.add("w-full");
+    document.getElementById("signature-label").classList.remove("w-1/2");
+  });
+</script>

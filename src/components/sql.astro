@@ -1,0 +1,69 @@
+---
+import { Content } from "../content/sql.md";
+---
+
+<section class="w-full h-full flex-row z-20 hidden" id="sql">
+  <div
+    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto"
+    id="sql-content"
+  >
+    <Content />
+  </div>
+  <div
+    class="w-full h-full flex flex-col p-4 pl-0 transition-all duration-500"
+    id="sql-label"
+  >
+    <div id="topRight" class="w-full h-full flex flex-row-reverse items-center">
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
+        class="font-smooch border border-solid
+        hover:bg-secondary hover:text-white active:text-secondary transition-all duration-500
+        border-white w-1/2 h-full grid content-center justify-center bg-primary text-black shadow-sm shadow-black"
+        id="sql-link">SQL<br /><span>2023</span></a
+      >
+    </div>
+    <div id="sql-space" class="w-full h-full transition-all duration-500"></div>
+  </div>
+</section>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<script>
+  const sqlLink = document.getElementById("sql-link");
+  const sqlSpace = document.getElementById("sql-space");
+
+  // Event listener for section load
+  document.addEventListener("sectionLoadEvent", function () {
+    setTimeout(() => {
+      sqlLink.classList.remove("w-1/2");
+      sqlLink.classList.add("w-full");
+      setTimeout(() => {
+        document.getElementById("sql-label").classList.remove("w-full");
+        document.getElementById("sql-label").classList.add("w-1/2");
+        document.getElementById("sql-content").classList.remove("text-white");
+      }, 150);
+      setTimeout(() => {
+        sqlSpace.classList.remove("h-full");
+        sqlSpace.classList.add("h-0");
+      }, 150);
+    }, 500);
+  });
+
+  // Event listener for section unload
+  document.addEventListener("sectionUnloadEvent", function () {
+    document.getElementById("sql-content").classList.add("text-white");
+    sqlSpace.classList.remove("h-0");
+    sqlSpace.classList.add("h-full");
+    sqlLink.classList.remove("w-full");
+    sqlLink.classList.add("w-1/2");
+    document.getElementById("sql-label").classList.add("w-full");
+    document.getElementById("sql-label").classList.remove("w-1/2");
+  });
+</script>
