@@ -105,7 +105,7 @@
     setTimeout(() => {
       portfolioLink.classList.remove("w-1/2");
       portfolioLabel.classList.remove("h-[36vh]");
-      portfolioLabel.classList.add("h-1/8");
+      portfolioLabel.classList.add("h-1/6");
       portfolioLink.classList.remove("hover:w-full");
       portfolioLink.classList.add("w-full");
       setTimeout(() => {
@@ -118,7 +118,7 @@
 
   document.addEventListener("sectionUnloadEvent", function () {
     setTimeout(() => {
-      portfolioLabel.classList.remove("h-1/8");
+      portfolioLabel.classList.remove("h-1/6");
       portfolioLabel.classList.add("h-[36vh]");
       document.getElementById("portfolio-content").classList.add("text-white");
       portfolioLink.classList.remove("w-full");
