@@ -20,29 +20,72 @@
     class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto"
     id="portfolio-content"
   >
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">
-      1. Portfolio: General Information
-    </h3>
-    <strong>Heading</strong>: Portfolio Overview
-    <strong>Subheadings</strong>:
-    <p>
-      - Personal Statement: A brief introduction about yourself and your
-      professional interests.
+    <p class="mb-6 text-lg sm:text-xl md:text-2xl">
+      Welcome! I am a passionate developer with a diverse background in
+      programming, machine learning, and multimedia. My journey in technology,
+      influenced by a family business ethos, has shaped a strong work ethic and
+      a drive for continuous learning.
     </p>
-    <p>
-      - Skills Overview: Quick list or visual representation of your key skills.
-    </p>
-    <p>- Highlights: Noteworthy projects or achievements.</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
-    <p>scrollcontent</p>
+
+    <div class="mb-8">
+      <h4 class="text-xl sm:text-2xl font-bold mb-4">Skill Highlights</h4>
+      <p class="text-lg sm:text-xl md:text-2xl">
+        Expertise in HTML, CSS, JavaScript, C#, PHP, and SQL. Proficient in
+        NodeJS, npm, and Astro for creating dynamic websites. Additionally, I
+        utilize Python to develop and run machine learning models on local
+        environments.
+      </p>
+    </div>
+
+    <div class="mb-8">
+      <h4 class="text-xl sm:text-2xl font-bold mb-4">Project Showcase</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="text-white bg-[#012169dd] p-4 rounded">
+          <h5 class="font-semibold">SQL: Data Management</h5>
+          <p class="text-lg sm:text-xl md:text-2xl">
+            Anthony's Fast Food is a restaurant looking to expand online.
+          </p>
+          <p class="text-lg sm:text-xl md:text-2xl">
+            The business requirements have been gathered and the database has
+            been designed.
+          </p>
+        </div>
+
+        <div class="text-white bg-[#012169dd] p-4 rounded">
+          <h5 class="font-semibold">SportsWarehouse</h5>
+          <p class="text-lg sm:text-xl md:text-2xl">
+            SportsWarehouse is a sports equipment wholesaler looking to expand
+            online.
+          </p><br />
+          <p class="text-lg sm:text-xl md:text-2xl">
+            The website was built from scratch using HTML, CSS, JS, PHP8.2 and
+            nginx.
+          </p>
+        </div>
+
+        <div class="text-white bg-[#012169dd] p-4 rounded">
+          <h5 class="font-semibold">BeanScene</h5>
+          <p class="text-lg sm:text-xl md:text-2xl">
+            BeanScene is a private cafe that requires clients to reserve or
+            otherwise arrange their seating prior to arrival.
+          </p>
+          <p class="text-lg sm:text-xl md:text-2xl">
+            The website is built using ASP.NET Core MVC, EF, and Foundation
+            Sites.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <h4 class="text-xl sm:text-2xl font-bold mb-4">Diversity in Knowledge</h4>
+      <p class="text-lg sm:text-xl md:text-2xl">
+        My expertise extends beyond programming to include administrative
+        skills, multimedia production, and research & development. This breadth
+        of knowledge allows me to approach IT projects with a unique and
+        comprehensive perspective.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -56,11 +99,13 @@
 </style>
 <script>
   const portfolioLink = document.getElementById("portfolio-link");
+  const portfolioLabel = document.getElementById("portfolio-label");
 
-  // Event listener for section load
   document.addEventListener("sectionLoadEvent", function () {
     setTimeout(() => {
       portfolioLink.classList.remove("w-1/2");
+      portfolioLabel.classList.remove("h-[36vh]");
+      portfolioLabel.classList.add("h-1/8");
       portfolioLink.classList.remove("hover:w-full");
       portfolioLink.classList.add("w-full");
       setTimeout(() => {
@@ -71,15 +116,18 @@
     }, 500);
   });
 
-  // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
-    document.getElementById("portfolio-content").classList.add("text-white");
-    portfolioLink.classList.remove("w-full");
-    portfolioLink.classList.add("w-1/2");
-    document.getElementById("portfolio-label").classList.add("w-full");
-    document.getElementById("portfolio-label").classList.remove("w-1/2");
     setTimeout(() => {
-      portfolioLink.classList.add("hover:w-full");
-    }, 1500);
+      portfolioLabel.classList.remove("h-1/8");
+      portfolioLabel.classList.add("h-[36vh]");
+      document.getElementById("portfolio-content").classList.add("text-white");
+      portfolioLink.classList.remove("w-full");
+      portfolioLink.classList.add("w-1/2");
+      document.getElementById("portfolio-label").classList.add("w-full");
+      document.getElementById("portfolio-label").classList.remove("w-1/2");
+      setTimeout(() => {
+        portfolioLink.classList.add("hover:w-full");
+      }, 1500);
+    }, 50);
   });
 </script>
