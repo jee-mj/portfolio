@@ -22,49 +22,62 @@
     class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto"
     id="csharp-content"
   >
+    <h3 class="text-2xl sm:text-4xl md:text-6xl">BeanScene</h3>
+    <p class="text-lg sm:text-xl md:text-2xl">
+      BeanScene is a private cafe that requires clients to reserve or otherwise
+      arrange their seating prior to arrival.
+    </p>
+    <p class="text-lg sm:text-xl md:text-2xl">
+      The website is built using ASP.NET Core MVC and Entity Framework Core.
+      Foundation Sites is used as the front-end styling solution.
+    </p>
+    <h3 class="text-2xl sm:text-4xl md:text-6xl">Resources</h3>
+    <h3 class="text-2xl sm:text-4xl md:text-6xl">Notes</h3>
   </div>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+  <script>
+    const csharpLink = document.getElementById("csharp-link");
+    const csharpSpace = document.getElementById("csharp-space");
+
+    // Event listener for section load
+    document.addEventListener("sectionLoadEvent", function () {
+      setTimeout(() => {
+        csharpLink.classList.remove("w-1/2");
+        csharpLink.classList.add("w-full");
+        setTimeout(() => {
+          csharpSpace.classList.remove("h-full");
+          csharpSpace.classList.add("h-0");
+        }, 150);
+        document
+          .getElementById("csharp-content")
+          .classList.remove("text-white");
+        setTimeout(() => {
+          document.getElementById("csharp-label").classList.remove("w-full");
+          document.getElementById("csharp-label").classList.add("w-1/2");
+        }, 150);
+      }, 500);
+    });
+
+    // Event listener for section unload
+    document.addEventListener("sectionUnloadEvent", function () {
+      setTimeout(() => {
+        document.getElementById("csharp-content").classList.add("text-white");
+      }, 1000);
+      csharpSpace.classList.remove("h-0");
+      csharpSpace.classList.add("h-full");
+      csharpLink.classList.remove("w-full");
+      csharpLink.classList.add("w-1/2");
+      document.getElementById("csharp-label").classList.add("w-full");
+      document.getElementById("csharp-label").classList.remove("w-1/2");
+    });
+  </script>
 </section>
-
-<style>
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-</style>
-
-<script>
-  const csharpLink = document.getElementById("csharp-link");
-  const csharpSpace = document.getElementById("csharp-space");
-
-  // Event listener for section load
-  document.addEventListener("sectionLoadEvent", function () {
-    setTimeout(() => {
-      csharpLink.classList.remove("w-1/2");
-      csharpLink.classList.add("w-full");
-      setTimeout(() => {
-        csharpSpace.classList.remove("h-full");
-        csharpSpace.classList.add("h-0");
-      }, 150);
-      document.getElementById("csharp-content").classList.remove("text-white");
-      setTimeout(() => {
-        document.getElementById("csharp-label").classList.remove("w-full");
-        document.getElementById("csharp-label").classList.add("w-1/2");
-      }, 150);
-    }, 500);
-  });
-
-  // Event listener for section unload
-  document.addEventListener("sectionUnloadEvent", function () {
-    setTimeout(() => {
-      document.getElementById("csharp-content").classList.add("text-white");
-    }, 1000);
-    csharpSpace.classList.remove("h-0");
-    csharpSpace.classList.add("h-full");
-    csharpLink.classList.remove("w-full");
-    csharpLink.classList.add("w-1/2");
-    document.getElementById("csharp-label").classList.add("w-full");
-    document.getElementById("csharp-label").classList.remove("w-1/2");
-  });
-</script>
