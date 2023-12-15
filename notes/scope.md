@@ -10,7 +10,7 @@ I want to use this current full-page design as the general home page. I need to 
     1. Slide away each petal in succession.
     2. Shrink all petals simultaneously.
     3. Shrink petals in succession.
-  * Use 5 tones for the colour palette without counting the special text colours.
+  * Reevaluate ~~Use 5~~ tones for the colour palette without counting the special text colours.
   * Centralise around a theme, ideas:
     1. 4 petal flower
     2. Space, the future
