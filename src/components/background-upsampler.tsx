@@ -6,7 +6,7 @@ const BackgroundUpsampler = () => {
   const [nextImage, setNextImage] = useState(3);
   const [isLoaded, setIsLoaded] = useState(false);
   const totalImages = 50;
-  const transitionDuration = 0.777;
+  const transitionDuration = 3.108;
 
   const preloadImage = (imageIndex) => {
     const img = new Image();
@@ -29,7 +29,7 @@ const BackgroundUpsampler = () => {
 
         preloadImage(newNextImage);
       }
-    }, 777);
+    }, 3108);
 
     return () => clearInterval(interval);
   }, [isLoaded, nextImage, currentImage]);
