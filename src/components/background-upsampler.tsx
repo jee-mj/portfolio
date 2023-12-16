@@ -10,7 +10,7 @@ const BackgroundUpsampler = () => {
 
   const preloadImage = (imageIndex) => {
     const img = new Image();
-    img.src = `/assets/bg-${imageIndex}.jpeg`;
+    img.src = `/portfolio/assets/bg-${imageIndex}.jpeg`;
     img.onload = () => setIsLoaded(true);
   };
 
@@ -40,7 +40,7 @@ const BackgroundUpsampler = () => {
         key={currentImage}
         className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: `url('/assets/bg-${currentImage}.jpeg')`,
+          backgroundImage: `url('/portfolio/assets/bg-${currentImage}.jpeg')`,
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -51,7 +51,7 @@ const BackgroundUpsampler = () => {
           key={nextImage}
           className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url('/assets/bg-${nextImage}.jpeg')`,
+            backgroundImage: `url('/portfolio/assets/bg-${nextImage}.jpeg')`,
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
