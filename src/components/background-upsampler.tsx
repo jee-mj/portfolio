@@ -10,7 +10,7 @@ const BackgroundUpsampler = () => {
 
   const preloadImage = (imageIndex) => {
     const img = new Image();
-    img.src = `/assets/bg-${imageIndex}.jpeg`;
+    img.src = `/portfolio/assets/bg-${imageIndex}.jpeg`;
     img.onload = () => setIsLoaded(true);
   };
 
