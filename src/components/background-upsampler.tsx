@@ -6,11 +6,11 @@ const BackgroundUpsampler = () => {
   const [nextImage, setNextImage] = useState(3);
   const [isLoaded, setIsLoaded] = useState(false);
   const totalImages = 50;
-  const transitionDuration = 3.108;
+  const transitionDuration = 2.331;
 
   const preloadImage = (imageIndex) => {
     const img = new Image();
-    img.src = `./assets/bg-${imageIndex}.jpeg`;
+    img.src = `./assets/background/bg-${imageIndex}.jpeg`;
     img.onload = () => setIsLoaded(true);
   };
 
@@ -29,7 +29,7 @@ const BackgroundUpsampler = () => {
 
         preloadImage(newNextImage);
       }
-    }, 3108);
+    }, 2331);
 
     return () => clearInterval(interval);
   }, [isLoaded, nextImage, currentImage]);
@@ -40,7 +40,7 @@ const BackgroundUpsampler = () => {
         key={currentImage}
         className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: `url('./assets/bg-${currentImage}.jpeg')`,
+          backgroundImage: `url('./assets/background/bg-${currentImage}.jpeg')`,
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -51,7 +51,7 @@ const BackgroundUpsampler = () => {
           key={nextImage}
           className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url('./assets/bg-${nextImage}.jpeg')`,
+            backgroundImage: `url('./assets/background/bg-${nextImage}.jpeg')`,
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
