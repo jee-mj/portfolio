@@ -10,7 +10,7 @@ export default {
         smooch: ["Smooch Sans", "sans-serif"],
       },
       colors: {
-        primary: "#ffcd00",
+        primary: "#ffcd0099",
         secondary: "#012169e6",
         danger: "#f6511d",
         success: "#2ecf63",

@@ -20,93 +20,93 @@ import Education from "../components/education.astro";
   <SQL />
   <Education />
   <Signature />
-  <main class="w-full h-full flex flex-row" id="main">
-    <div class="w-full h-full flex flex-col p-4 pr-0" id="left">
-      <div id="topLeft" class="w-full h-full flex flex-col items-center">
-        <a
-          style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
-          class="font-smooch border border-solid hover:transition-all hover:shadow-lg
+</Layout>
+<main class="w-full h-full flex flex-row" id="main">
+  <div class="w-full h-full flex flex-col p-4 pr-0 z-20" id="left">
+    <div id="topLeft" class="w-full h-full flex flex-col items-center">
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
+        class="font-smooch border border-solid hover:transition-all hover:shadow-lg
             hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
-            text-white bg-secondary border-white
+            text-white border-white
             w-full h-full content-center
             grid"
-          id="portfolio-link">Portfolio</a
-        >
-        <a
-          style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
-          class="font-smooch border border-solid hover:transition-all hover:shadow-lg
+        id="portfolio-link">Portfolio</a
+      >
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
+        class="font-smooch border border-solid hover:transition-all hover:shadow-lg
             hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
-            text-white bg-secondary border-white
+            text-white border-white
             w-full h-full content-center
             grid"
-          id="work-link">Work</a
-        >
-      </div>
-      <div id="bottomLeft" class="w-full h-full flex flex-row items-center">
-        <a
-          style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
-          class="font-smooch border border-solid hover:transition-all hover:shadow-lg
-            hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
-            text-white bg-secondary border-white
-            w-full h-full content-center justify-center
-            grid"
-          id="php-link">PHP<br /><span>2023</span></a
-        >
-        <a
-          style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
-          class="font-smooch border border-solid hover:transition-all hover:shadow-lg
-            hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
-            text-white bg-secondary border-white
-            w-full h-full content-center justify-center
-            grid"
-          id="csharp-link">C#<br /><span>2022</span></a
-        >
-      </div>
+        id="work-link">Work</a
+      >
     </div>
-    <div class="w-full h-full flex flex-col p-4 pl-0" id="right">
-      <div id="topRight" class="w-full h-full flex flex-row items-center">
-        <a
-          style="font-size: clamp(2em, 5vw, 4em);"
-          class="font-smooch border border-solid hover:transition-all hover:shadow-lg
+    <div id="bottomLeft" class="w-full h-full flex flex-row items-center">
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
+        class="font-smooch border border-solid hover:transition-all hover:shadow-lg
             hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
-            text-white bg-secondary border-white
+            text-white border-white
+            w-full h-full content-center justify-center
+            grid"
+        id="php-link">PHP<br /><span>2023</span></a
+      >
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
+        class="font-smooch border border-solid hover:transition-all hover:shadow-lg
+            hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
+            text-white border-white
+            w-full h-full content-center justify-center
+            grid"
+        id="csharp-link">C#<br /><span>2022</span></a
+      >
+    </div>
+  </div>
+  <div class="w-full h-full flex flex-col p-4 pl-0 z-20" id="right">
+    <div id="topRight" class="w-full h-full flex flex-row items-center">
+      <a
+        style="font-size: clamp(2em, 5vw, 4em);"
+        class="font-smooch border border-solid hover:transition-all hover:shadow-lg
+            hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
+            text-white border-white
             w-full h-full content-center justify-center
             grid leading-none"
-          id="about-link">A<br />b<br />o<br />u<br />t</a
-        >
-        <a
-          style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
-          class="font-smooch border border-solid hover:transition-all hover:shadow-lg
+        id="about-link">A<br />b<br />o<br />u<br />t</a
+      >
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
+        class="font-smooch border border-solid hover:transition-all hover:shadow-lg
             hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
-            text-white bg-secondary border-white
+            text-white border-white
             w-full h-full content-center justify-center
             grid"
-          id="sql-link">SQL<br /><span>2023</span></a
-        >
-      </div>
-      <div id="bottomRight" class="w-full h-full flex flex-col items-center">
-        <a
-          style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
-          class="font-smooch border border-solid hover:transition-all hover:shadow-lg
+        id="sql-link">SQL<br /><span>2023</span></a
+      >
+    </div>
+    <div id="bottomRight" class="w-full h-full flex flex-col items-center">
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
+        class="font-smooch border border-solid hover:transition-all hover:shadow-lg
             hover:bg-primary hover:text-black hover:shadow-black active:text-white transition-all duration-400 hover:duration-500
-            text-white bg-secondary border-white
+            text-white border-white
             w-full h-full content-center
             grid"
-          id="education-link">Study</a
-        >
-        <a
-          style="font-size: clamp(2em, 5vw, 4em); padding-right: clamp(0.5em,10vw,60em);"
-          class="font-smooch border border-solid hover:transition-all hover:shadow-lg
+        id="education-link">Study</a
+      >
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); padding-right: clamp(0.5em,10vw,60em);"
+        class="font-smooch border border-solid hover:transition-all hover:shadow-lg
             hover:bg-primary hover:text-black hover:shadow-black
-            text-white bg-secondary border-white
+            text-white border-white
             w-full h-full content-center justify-end
             grid"
-          id="signature-link">jee-mj</a
-        >
-      </div>
+        id="signature-link">jee-mj</a
+      >
     </div>
-  </main>
-</Layout>
+  </div>
+</main>
 
 <style>
   html,
@@ -122,33 +122,31 @@ import Education from "../components/education.astro";
   const sectionUnloadEvent = new CustomEvent("sectionUnloadEvent");
 
   const toggleComponentVisibility = (event) => {
-    // Prevent the default anchor link behavior
-
     const clickedLink = event.target;
     const componentId = clickedLink.id.replace("-link", "");
 
-    // Find the corresponding section
     const sectionToToggle = document.getElementById(componentId);
     if (sectionToToggle) {
       // Toggle 'hidden' and 'flex' classes
       if (sectionToToggle.classList.contains("hidden")) {
-        document.querySelectorAll(".bg-secondary").forEach((item) => {
-          item.classList.remove("bg-secondary");
-          item.classList.add("bg-white");
-          document.dispatchEvent(sectionLoadEvent);
-          setTimeout(() => {
-            document.getElementById("main").classList.remove("flex");
-            document.getElementById("main").classList.add("hidden");
-            sectionToToggle.classList.remove("hidden");
-            sectionToToggle.classList.add("flex");
-          }, 400);
-        });
+        // document.querySelectorAll(".bg-secondary").forEach((item) => {
+        //   item.classList.remove("bg-secondary");
+        //   item.classList.add("bg-white");
+        //   document.dispatchEvent(sectionLoadEvent);
+        // });
+        document.dispatchEvent(sectionLoadEvent);
+        setTimeout(() => {
+          document.getElementById("main").classList.remove("flex");
+          document.getElementById("main").classList.add("hidden");
+          sectionToToggle.classList.remove("hidden");
+          sectionToToggle.classList.add("flex");
+        }, 400);
       } else {
         document.dispatchEvent(sectionUnloadEvent);
-        document.querySelectorAll(".bg-white").forEach((item) => {
-          item.classList.remove("bg-white");
-          item.classList.add("bg-secondary");
-        });
+        //document.querySelectorAll(".bg-white").forEach((item) => {
+        //  item.classList.remove("bg-white");
+        //  item.classList.add("bg-secondary");
+        //});
         setTimeout(() => {
           sectionToToggle.classList.add("hidden");
           sectionToToggle.classList.remove("flex");

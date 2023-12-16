@@ -43,14 +43,14 @@ I want to play with Inkscape some more, but time is also important. Ideally I wa
 I think a few giant PNGs should be fine. Cater upto 4K, since 8K is still a little bit buggy last I recall. I'll have the website requirements be a standard 4G connection, or ADSL2, so 20 Mbps, and so the homepage assets should be a maximum of 1-3 MB.
 
 So these considerations equate to the next steps in order being:
-  0. Design should be revolutionarily static to the next level so it impresses the right person like **static** *impressed me* when I first saw its capabilities.
-  1. Plan resources for the main page.
-  2. Acquire resources for the main page.
-  3. Fix the button leaking into other div elements by upgrading selectors.
-  4. Implement resources for the main page.
-  5. Then, have some imaginary work at.. Apple, Microsoft, Facebook, Google, yeah oh yeah Cisco, you know. :D Make it up! Be king of github!!! (imaginarily)
-  6. About page? The details of this implementation. Why I made it. It's basically a normie's readme.MD
-  7. Study -- Yeah so nowhere I actually studied.
-  8. Something also silly for anyone that looks at the github version. Leave it for day 7-8, or forever hold breath because this is the project scope and deadline in this document!
+  1. Design should be revolutionarily static to the next level so it impresses the right person like **static** *impressed me* when I first saw its capabilities.
+  2. Plan resources for the main page.
+  3. Acquire resources for the main page.
+  4. Fix the button leaking into other div elements by upgrading selectors.
+  5. Implement resources for the main page.
+  6. Then, have some imaginary work at.. Apple, Microsoft, Facebook, Google, yeah oh yeah Cisco, you know. :D Make it up! Be king of github!!! (imaginarily)
+  7. About page? The details of this implementation. Why I made it. It's basically a normie's readme.MD
+  8. Study -- Yeah so nowhere I actually studied.
+  9. Something also silly for anyone that looks at the github version. Leave it for day 7-8, or forever hold breath because this is the project scope and deadline in this document!
 
 Plenty of pages in `./notes`!

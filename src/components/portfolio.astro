@@ -1,4 +1,4 @@
-<section class="w-full h-full flex-col z-20 hidden" id="portfolio">
+<section class="w-full h-full flex-col hidden z-20" id="portfolio">
   <div
     class="w-full h-[36vh] flex flex-row p-4 pb-0 transition-all duration-500 z-50"
     id="portfolio-label"
@@ -18,27 +18,27 @@
   </div>
   <div
     style="padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
-    class="w-full h-full text-white transition-all duration-600 inline-block overflow-y-auto p-4"
+    class="w-full h-full text-white transition-all duration-600 inline-block overflow-y-auto p-4 z-20"
     id="portfolio-content"
   >
     <div class="mb-8 ml-4">
       <div class="mb-8">
-        <div class="bg-white pb-8 pt-4 sm:pb-4">
+        <div class="pb-8 pt-4 sm:pb-4">
           <div class="mx-auto">
             <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
               <div class="xl:flex xl:flex-row">
                 <div class="mx-auto w-full xl:mx-0">
-                  <h2 class="text-3xl font-bold tracking-tight text-gray-900">
+                  <h2 class="text-3xl font-bold tracking-tight text-white">
                     Welcome to my portfolio!
                   </h2>
-                  <p class="mt-6 text-lg leading-8 text-gray-600">
+                  <p class="mt-6 text-lg leading-8 text-white">
                     I am a passionate developer with a diverse background across
                     Front-End, Back-End, and API/Database Development. My
                     journey in technology, influenced by a family business
                     ethos, has shaped a strong work ethic and a drive for
                     continuous learning.
                   </p>
-                  <p class="mt-6 text-lg leading-8 text-gray-600">
+                  <p class="mt-6 text-lg leading-8 text-white">
                     This portfolio, a static showcase of my capabilities, is
                     complemented by my concurrent focus on enhancing my skills
                     in animation, utilizing both ReactJS-based and
@@ -64,34 +64,58 @@
         </h2>
         <p class="my-6 text-lg leading-8 text-gray-600">
           <div class="grid grid-cols-5 mb-8">
-            <img class="h-8 w-auto m-auto" src="./Git.svg" alt="Git" />
-            <img class="h-8 w-auto m-auto" src="./Cs.svg" alt="C#" />
-            <img class="h-8 w-auto m-auto" src="./PHP.svg" alt="PHP" />
-            <img class="h-8 w-auto m-auto" src="./Python.svg" alt="Python" />
-            <img class="h-8 w-auto m-auto" src="./Laravel.svg" alt="Laravel" />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/Git.svg"
+              alt="Git"
+            />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/Cs.svg"
+              alt="C#"
+            />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/PHP.svg"
+              alt="PHP"
+            />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/Python.svg"
+              alt="Python"
+            />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/Laravel.svg"
+              alt="Laravel"
+            />
           </div>
           <div class="grid grid-cols-5 mb-8">
             <img
               class="h-10 w-auto m-auto pt-2 rounded"
-              src="./.NET.svg"
+              src="./assets/tools/.NET.svg"
               alt="DotNET"
             />
             <img
               class="h-10 w-auto m-auto pt-2"
-              src="./Node.JS.svg"
+              src="./assets/tools/Node.JS.svg"
               alt="Node.JS"
             />
             <img
               class="h-12 w-auto m-auto py-2"
-              src="./Nuget.svg"
+              src="./assets/tools/Nuget.svg"
               alt="Nuget"
             />
             <div class="flex flex-row self-start pt-2">
-              <img class="h-6 w-auto m-auto pt-2" src="./NPM.svg" alt="NPM" />
+              <img
+                class="h-6 w-auto m-auto pt-2"
+                src="./assets/tools/NPM.svg"
+                alt="NPM"
+              />
             </div>
             <img
               class="h-11 w-auto m-auto"
-              src="./Composer.svg"
+              src="./assets/tools/Composer.svg"
               alt="Composer"
             />
           </div>
@@ -99,47 +123,87 @@
           <!-- Databases: SQL, MongoDB, CosmosDB, EntityFramework, Redis<br
                   /> -->
           <div class="grid grid-cols-5 mb-8">
-            <img class="h-8 w-auto m-auto" src="./MariaDB.svg" alt="MariaDB" />
-            <img class="h-8 w-auto m-auto" src="./MongoDB.svg" alt="MongoDB" />
             <img
               class="h-8 w-auto m-auto"
-              src="./CosmosDB.png"
+              src="./assets/tools/MariaDB.svg"
+              alt="MariaDB"
+            />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/MongoDB.svg"
+              alt="MongoDB"
+            />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/CosmosDB.png"
               alt="CosmosDB"
             />
-            <img class="h-8 w-auto m-auto" src="./Redis.svg" alt="Redis" />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/Redis.svg"
+              alt="Redis"
+            />
             <img
               class="h-8 w-auto m-auto bg-[#fe356f] rounded"
-              src="./Mermaid.JS.svg"
+              src="./assets/tools/Mermaid.JS.svg"
               alt="Mermaid.JS"
             />
           </div>
           <!-- Frameworks & Libraries: jQuery, .NET, Node.JS, NPM, Astro,
                   NextJS, React, Bootstrap, Tailwind<br /> -->
           <div class="grid grid-cols-5 mb-8">
-            <img class="h-10 w-auto m-auto" src="./Astro.svg" alt="Astro" />
-            <img class="h-8 w-auto m-auto" src="./NextJS.svg" alt="Next.JS" />
-            <img class="h-8 w-auto m-auto" src="./Vite.svg" alt="Vite" />
+            <img
+              class="h-10 w-auto m-auto"
+              src="./assets/tools/Astro.svg"
+              alt="Astro"
+            />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/NextJS.svg"
+              alt="Next.JS"
+            />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/Vite.svg"
+              alt="Vite"
+            />
             <img
               class="h-8 w-auto m-auto py-1"
-              src="./Tailwind.svg"
+              src="./assets/tools/Tailwind.svg"
               alt="Tailwind"
             />
             <img
               class="h-8 w-auto m-auto my-1"
-              src="./Bootstrap.svg"
+              src="./assets/tools/Bootstrap.svg"
               alt="Bootstrap"
             />
           </div>
           <div class="grid grid-cols-5 mb-8">
-            <img class="h-9 w-auto m-auto" src="./React.svg" alt="React" />
-            <img class="h-9 w-auto m-auto" src="./GraphQL.svg" alt="GraphQL" />
+            <img
+              class="h-9 w-auto m-auto"
+              src="./assets/tools/React.svg"
+              alt="React"
+            />
+            <img
+              class="h-9 w-auto m-auto"
+              src="./assets/tools/GraphQL.svg"
+              alt="GraphQL"
+            />
             <img
               class="h-10 w-auto m-auto rounded"
-              src="./Foundation.jpg"
+              src="./assets/tools/Foundation.jpg"
               alt="Foundation"
             />
-            <img class="h-8 w-auto m-auto" src="./Docker.svg" alt="Docker" />
-            <img class="h-10 w-auto m-auto" src="./Debian.svg" alt="Debian" />
+            <img
+              class="h-8 w-auto m-auto"
+              src="./assets/tools/Docker.svg"
+              alt="Docker"
+            />
+            <img
+              class="h-10 w-auto m-auto"
+              src="./assets/tools/Debian.svg"
+              alt="Debian"
+            />
           </div>
         </p>
         <!-- Web Technologies: REST, GraphQL, AJAX<br />
@@ -187,11 +251,6 @@
       portfolioLabel.classList.add("h-1/6");
       portfolioLink.classList.remove("hover:w-full");
       portfolioLink.classList.add("w-full");
-      setTimeout(() => {
-        document
-          .getElementById("portfolio-content")
-          .classList.remove("text-white");
-      }, 150);
     }, 500);
   });
 
@@ -199,7 +258,6 @@
     setTimeout(() => {
       portfolioLabel.classList.remove("h-1/6");
       portfolioLabel.classList.add("h-[36vh]");
-      document.getElementById("portfolio-content").classList.add("text-white");
       portfolioLink.classList.remove("w-full");
       portfolioLink.classList.add("w-1/2");
       document.getElementById("portfolio-label").classList.add("w-full");

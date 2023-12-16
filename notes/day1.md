@@ -8,7 +8,7 @@ It should be all handled by a single LAMP server which shouldn't be more than ha
 
 So there are five days to complete the demo.
 
-1. Later today once awaking, the assets for the main page should be attained.
+1. Later today once awaking, the assets for the main page should be attained. DONE!
 2. Tomorrow, the focus should be on refactoring all the code. I suspect there are some unnecessary divs from the content I frankenstein'd to look pretty with lots of wasted space. Once the code is cleaned up, look into the animations.
 3. Then, work on About page. 
 4. Languages, and work/education (work/education can be mirrored).
@@ -19,6 +19,7 @@ So there are five days to complete the demo.
 While that is being developed (currently on point 4.), let's quickly brainstorm some nice stuff.
 
 ### Jobs
+
 1. UX Engineer at Weta (Lead UX-berg)
 2. Systems Administrator at Gianthard (Head Office Resident Magician)
 3. Business Analyst at 900913 - WholeNumbers Corporation (Always Sick near Christmas)
@@ -27,6 +28,7 @@ While that is being developed (currently on point 4.), let's quickly brainstorm 
 I think 4 is enough, and these claims are too much already for a portfolio template made by myself so let's call it a wrap here.
 
 ### Education
+
 1. Bachelor of Software Engineering at WIT.
 2. Bachelor of Songwriting at Oakley.
 
@@ -54,8 +56,122 @@ So this should be Day 5 considerations, but should be started from Day 2 (tomorr
 
 Clearing some work up for the About Page:
 
+```md
+
 # About
 
-## StackDetails
+## Hypothesis
 
-## 
+## Aim
+
+## Tools
+
+### StackDetails
+
+### Tailwind CSS
+
+### React
+
+### Framer-Motion
+
+### Github Pages
+
+## Method
+
+## Results
+
+## Author's Notes
+
+```
+
+That should be fine for the content for now.
+
+The Projects should also try to follow this format:
+
+```md
+
+# C#
+
+## Hypothesis
+
+## Aim
+
+## Tools
+
+### StackDetails
+
+### Foundation Sites
+
+### MVC Platform
+
+### API Integration
+
+### Database Integration
+
+## Method
+
+## Results
+
+## Author's Notes
+
+```
+
+```md
+
+# PHP
+
+## Hypothesis
+
+## Aim
+
+## Tools
+
+### StackDetails
+
+### Laravel
+
+### Barebones CSS
+
+### API Integration
+
+### Database Integration
+
+## Method
+
+## Results
+
+## Author's Notes
+
+```
+
+```md
+
+# SQL
+
+## Hypothesis
+
+## Aim
+
+## Tools
+
+### XAMPP
+
+### Redis
+
+## Method
+
+### Analysis
+
+### Design
+
+## Results
+
+## Author's Notes
+
+```
+
+I thought about an animated Earth video. I have some assets that are roughly 600 MB in total of animated Earth and Mars.
+
+If I could get it down to less than 20 MB per asset, and solve transparency, it would be preferable to static PNG files. Unfortunately, I may have to switch to windows temporarily as Da Vinci doesn't seem to load after installation in this setup.
+
+I'm calling it a day with these notes.
