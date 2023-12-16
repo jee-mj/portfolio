@@ -31,13 +31,15 @@ const { title } = Astro.props;
     <div class="w-4 h-full bg-black absolute left-0 z-50"></div>
     <div class="w-4 h-full bg-black absolute right-0 z-50"></div>
     <div
-      id="earth"
-      class="w-[16rem] h-[16rem] bg-[url('/assets/background/mars.png')] bg-center bg-cover absolute right-8 top-32 lg:right-32 lg:top-32 z-10 transition-all duration-2000"
+      id="mars"
+      style="right: clamp(2rem, 6vw, 8vw); top: clamp(2rem, 13vh, 16vh);"
+      class="w-[16rem] h-[16rem] bg-[url('/assets/background/mars.png')] bg-center bg-cover absolute z-10 transition-all duration-2000"
     >
     </div>
     <div
-      id="mars"
-      class="w-[16rem] h-[16rem] bg-[url('/assets/background/earth.png')] bg-center bg-cover absolute left-8 bottom-32 lg:left-72 lg:bottom-24 z-10 transition-all duration-2000"
+      id="earth"
+      style="left: clamp(2rem, 22vw, 36vw); bottom: clamp(2rem, 16vh, 28vh);"
+      class="w-[16rem] h-[16rem] bg-[url('/assets/background/earth.png')] bg-center bg-cover absolute z-10 transition-all duration-2000"
     >
     </div>
     <slot />
