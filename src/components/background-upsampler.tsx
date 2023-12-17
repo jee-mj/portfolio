@@ -42,8 +42,8 @@ const BackgroundUpsampler = () => {
         style={{
           backgroundImage: `url('./assets/background/bg-${currentImage}.jpeg')`,
         }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 1 }}
+        animate={{ opacity: [1, 0.8, 0.5, 0.1, 0] }}
         transition={{ duration: transitionDuration, delay: transitionDuration }}
       />
       {nextImage <= totalImages && (
@@ -54,7 +54,7 @@ const BackgroundUpsampler = () => {
             backgroundImage: `url('./assets/background/bg-${nextImage}.jpeg')`,
           }}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: [0, 0.3, 0.5, 0.7, 1] }}
           exit={{ opacity: 0 }}
           transition={{ duration: transitionDuration }}
         />
