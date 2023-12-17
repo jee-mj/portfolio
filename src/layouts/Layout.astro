@@ -25,23 +25,28 @@ const { title } = Astro.props;
   </head>
   <body id="body" class="bg-black">
     <BackgroundUpsampler client:load />
-    <!-- styling -->
-    <div class="w-full h-4 bg-black absolute top-0 z-50"></div>
-    <div class="w-full h-4 bg-black absolute bottom-0 z-50"></div>
-    <div class="w-4 h-full bg-black absolute left-0 z-50"></div>
-    <div class="w-4 h-full bg-black absolute right-0 z-50"></div>
-    <div
-      id="mars"
-      style="right: clamp(2rem, 6vw, 8vw); top: clamp(2rem, 13vh, 16vh);"
-      class="w-[16rem] h-[16rem] bg-[url('/assets/background/mars.png')] bg-center bg-cover absolute z-10 transition-all duration-2000"
+    <body
+      id="body"
+      class="duration-2000 bg-[url('/assets/bg-0.jpeg')] bg-cover bg-center"
     >
-    </div>
-    <div
-      id="earth"
-      style="left: clamp(2rem, 22vw, 36vw); bottom: clamp(2rem, 16vh, 28vh);"
-      class="w-[16rem] h-[16rem] bg-[url('/assets/background/earth.png')] bg-center bg-cover absolute z-10 transition-all duration-2000"
-    >
-    </div>
-    <slot />
+      <!-- styling -->
+      <div class="w-full h-4 bg-black absolute top-0 z-50"></div>
+      <div class="w-full h-4 bg-black absolute bottom-0 z-50"></div>
+      <div class="w-4 h-full bg-black absolute left-0 z-50"></div>
+      <div class="w-4 h-full bg-black absolute right-0 z-50"></div>
+      <div
+        id="mars"
+        style="right: clamp(2rem, 6vw, 8vw); top: clamp(2rem, 13vh, 16vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"
+        class="bg-[url('/assets/background/mars.png')] bg-center bg-cover absolute z-10 transition-all duration-1000"
+      >
+      </div>
+      <div
+        id="earth"
+        style="left: clamp(2rem, 22vw, 36vw); bottom: clamp(2rem, 16vh, 28vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"
+        class="bg-[url('/assets/background/earth.png')] bg-center bg-cover absolute z-10 transition-all duration-1000"
+      >
+      </div>
+      <slot />
+    </body>
   </body>
 </html>
