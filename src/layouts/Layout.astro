@@ -32,72 +32,106 @@ const { title } = Astro.props;
     <div class="w-4 h-full bg-black absolute left-0 z-50"></div>
     <div class="w-4 h-full bg-black absolute right-0 z-50"></div>
     <style>
-      #mars-canvas {
-        width: 100%;
-        height: auto;
+      #mars-canvas,
+      #earth-canvas {
+        width: clamp(4rem, 16rem, 33vw);
+        height: clamp(4rem, 16rem, 33vw);
+      }
+      .hidden-video {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
       }
     </style>
-    <canvas id="mars-canvas" class="absolute z-0" style="right: clamp(2rem, 6vw, 8vw); top: clamp(2rem, 13vh, 16vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"></canvas>
+    <canvas
+      id="earth-canvas"
+      class="absolute z-10"
+      style="left: clamp(2rem, 22vw, 36vw); bottom: clamp(2rem, 16vh, 28vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"
+    ></canvas>
+    <canvas
+      id="mars-canvas"
+      class="absolute z-10"
+      style="right: clamp(2rem, 6vw, 8vw); top: clamp(2rem, 13vh, 16vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"
+    ></canvas>
     <video
+      autoplay
+      muted
+      loop
+      id="earth-video"
+      width="256px"
+      class="hidden-video"
+    >
+      <source src="./assets/background/earth.mp4" type="video/mp4" />
+    </video>
+    <video
+      autoplay
+      muted
+      loop
       id="mars-video"
-      src="./assets/background/mars.mp4"
-      style="display: none;" autoplay loop></video>
-      <canvas id="earth-canvas" class="absolute z-0" style="left: clamp(2rem, 22vw, 36vw); bottom: clamp(2rem, 16vh, 28vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"></canvas>
-      <video
-        id="earth-video"
-        src="./assets/background/earth.mp4"
-        style="display: none;" autoplay loop></video>
-        
-      <slot />
+      width="256px"
+      class="hidden-video"
+    >
+      <source src="./assets/background/mars.mp4" type="video/mp4" />
+    </video>
+
+    <slot />
   </body>
-  <script>function setupVideoProcessing(videoId, canvasId, colorTarget) {
-    const videoElement = document.getElementById(videoId);
-    const canvasElement = document.getElementById(canvasId);
-  
-    // Cast to specific element types
-    const video = videoElement as HTMLVideoElement;
-    const canvas = canvasElement as HTMLCanvasElement;
-    const ctx = canvas.getContext("2d");
-  
-    video.addEventListener("play", function () {
-      const draw = () => {
-        if (!video.paused && !video.ended) {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-  
-          // Process to remove the green screen color
-          let frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          let l = frame.data.length / 4;
-  
-          for (let i = 0; i < l; i++) {
-            let r = frame.data[i * 4 + 0];
-            let g = frame.data[i * 4 + 1];
-            let b = frame.data[i * 4 + 2];
-            if (colorMatches(r, g, b, colorTarget)) {
-              frame.data[i * 4 + 3] = 0;
+  <script>
+    function setupVideoProcessing(videoId, canvasId, colorTarget, threshold) {
+      const videoElement = document.getElementById(videoId);
+      const canvasElement = document.getElementById(canvasId);
+
+      // Cast to specific element types
+      const video = videoElement as HTMLVideoElement;
+      const canvas = canvasElement as HTMLCanvasElement;
+      const ctx = canvas.getContext("2d");
+
+      // Use the video's metadata to set the canvas size
+      video.addEventListener("loadedmetadata", function () {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        video.play();
+      });
+
+      video.addEventListener("play", function () {
+        const draw = () => {
+          if (!video.paused && !video.ended) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Process to remove the green screen color
+            let frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            let l = frame.data.length / 4;
+
+            for (let i = 0; i < l; i++) {
+              let r = frame.data[i * 4 + 0];
+              let g = frame.data[i * 4 + 1];
+              let b = frame.data[i * 4 + 2];
+              if (colorMatches(r, g, b, colorTarget, threshold)) {
+                frame.data[i * 4 + 3] = 0;
+              }
             }
+            ctx.putImageData(frame, 0, 0);
+
+            requestAnimationFrame(draw);
           }
-          ctx.putImageData(frame, 0, 0);
-  
-          requestAnimationFrame(draw);
-        }
-      };
-      draw();
-    });
-  }
-  
-  function colorMatches(r, g, b, target) {
-    const threshold = 40; // Adjust color sensitivity
-    return (
-      Math.abs(r - target[0]) < threshold &&
-      Math.abs(g - target[1]) < threshold &&
-      Math.abs(b - target[2]) < threshold
-    );
-  }
-  
-  // Set up video processing for Mars and Earth videos
-  setupVideoProcessing("mars-video", "mars-canvas", [104,104,104]); // RGB values of #A349A4
-  setupVideoProcessing("earth-video", "earth-canvas", [163, 73, 164]); // Assuming same green screen color for Earth
-  
+        };
+        draw();
+      });
+    }
+
+    function colorMatches(r, g, b, target, threshold) {
+      return (
+        Math.abs(r - target[0]) < threshold &&
+        Math.abs(g - target[1]) < threshold &&
+        Math.abs(b - target[2]) < threshold
+      );
+    }
+
+    // Set up video processing for Mars and Earth videos with different thresholds
+    setupVideoProcessing("mars-video", "mars-canvas", [22, 22, 255], 86);
+    setupVideoProcessing("earth-video", "earth-canvas", [233, 0, 81], 86);
   </script>
 </html>
