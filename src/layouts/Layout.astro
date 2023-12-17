@@ -1,5 +1,4 @@
 ---
-import BackgroundUpsampler from "../components/background-upsampler";
 interface Props {
   title: string;
 }
@@ -23,30 +22,82 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body id="body" class="bg-black">
-    <BackgroundUpsampler client:load />
-    <body
-      id="body"
-      class="duration-2000 bg-[url('/assets/bg-0.jpeg')] bg-cover bg-center"
-    >
-      <!-- styling -->
-      <div class="w-full h-4 bg-black absolute top-0 z-50"></div>
-      <div class="w-full h-4 bg-black absolute bottom-0 z-50"></div>
-      <div class="w-4 h-full bg-black absolute left-0 z-50"></div>
-      <div class="w-4 h-full bg-black absolute right-0 z-50"></div>
-      <div
-        id="mars"
-        style="right: clamp(2rem, 6vw, 8vw); top: clamp(2rem, 13vh, 16vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"
-        class="bg-[url('/assets/background/mars.png')] bg-center bg-cover absolute z-10 transition-all duration-1000"
-      >
-      </div>
-      <div
-        id="earth"
-        style="left: clamp(2rem, 22vw, 36vw); bottom: clamp(2rem, 16vh, 28vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"
-        class="bg-[url('/assets/background/earth.png')] bg-center bg-cover absolute z-10 transition-all duration-1000"
-      >
-      </div>
+  <body
+    id="body"
+    class="duration-2000 bg-black bg-[url('/assets/background/bg.jpeg')] bg-cover bg-center"
+  >
+    <!-- styling -->
+    <div class="w-full h-4 bg-black absolute top-0 z-50"></div>
+    <div class="w-full h-4 bg-black absolute bottom-0 z-50"></div>
+    <div class="w-4 h-full bg-black absolute left-0 z-50"></div>
+    <div class="w-4 h-full bg-black absolute right-0 z-50"></div>
+    <style>
+      #mars-canvas {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+    <canvas id="mars-canvas" class="absolute z-0" style="right: clamp(2rem, 6vw, 8vw); top: clamp(2rem, 13vh, 16vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"></canvas>
+    <video
+      id="mars-video"
+      src="./assets/background/mars.mp4"
+      style="display: none;" autoplay loop></video>
+      <canvas id="earth-canvas" class="absolute z-0" style="left: clamp(2rem, 22vw, 36vw); bottom: clamp(2rem, 16vh, 28vh); width: clamp(4rem, 16rem, 33vw); height: clamp(4rem, 16rem, 33vw);"></canvas>
+      <video
+        id="earth-video"
+        src="./assets/background/earth.mp4"
+        style="display: none;" autoplay loop></video>
+        
       <slot />
-    </body>
   </body>
+  <script>function setupVideoProcessing(videoId, canvasId, colorTarget) {
+    const videoElement = document.getElementById(videoId);
+    const canvasElement = document.getElementById(canvasId);
+  
+    // Cast to specific element types
+    const video = videoElement as HTMLVideoElement;
+    const canvas = canvasElement as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d");
+  
+    video.addEventListener("play", function () {
+      const draw = () => {
+        if (!video.paused && !video.ended) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  
+          // Process to remove the green screen color
+          let frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          let l = frame.data.length / 4;
+  
+          for (let i = 0; i < l; i++) {
+            let r = frame.data[i * 4 + 0];
+            let g = frame.data[i * 4 + 1];
+            let b = frame.data[i * 4 + 2];
+            if (colorMatches(r, g, b, colorTarget)) {
+              frame.data[i * 4 + 3] = 0;
+            }
+          }
+          ctx.putImageData(frame, 0, 0);
+  
+          requestAnimationFrame(draw);
+        }
+      };
+      draw();
+    });
+  }
+  
+  function colorMatches(r, g, b, target) {
+    const threshold = 40; // Adjust color sensitivity
+    return (
+      Math.abs(r - target[0]) < threshold &&
+      Math.abs(g - target[1]) < threshold &&
+      Math.abs(b - target[2]) < threshold
+    );
+  }
+  
+  // Set up video processing for Mars and Earth videos
+  setupVideoProcessing("mars-video", "mars-canvas", [104,104,104]); // RGB values of #A349A4
+  setupVideoProcessing("earth-video", "earth-canvas", [163, 73, 164]); // Assuming same green screen color for Earth
+  
+  </script>
 </html>
