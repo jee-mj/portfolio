@@ -10,7 +10,7 @@
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid shadow-sm hover:w-full
-          hover:bg-primary hover:text-black active:text-secondary transition-all duration-200
+          hover:text-[#ffcd00] hover:border-[#ffcd00] active:text-secondary transition-all duration-200
           bg-secondary text-white border-white shadow-black
           w-1/2 h-full content-center
           grid"
@@ -220,9 +220,8 @@
   const portfolioLabel = document.getElementById("portfolio-label");
 
   document.addEventListener("sectionLoadEvent", function () {
-    if (!portfolioLink.classList.contains("hover:bg-primary")) {
-      portfolioLink.classList.add("hover:bg-primary");
-      portfolioLink.classList.add("hover:text-black");
+    if (!portfolioLink.classList.contains("hover:bg-secondary")) {
+      portfolioLink.classList.add("hover:bg-secondary");
     }
     setTimeout(() => {
       portfolioLink.classList.remove("w-1/2");
@@ -235,8 +234,7 @@
 
   document.addEventListener("sectionUnloadEvent", function () {
     setTimeout(() => {
-      portfolioLink.classList.remove("hover:bg-primary");
-      portfolioLink.classList.remove("hover:text-black");
+      portfolioLink.classList.remove("hover:bg-secondary");
       portfolioLabel.classList.remove("h-1/6");
       portfolioLabel.classList.add("h-[36vh]");
       portfolioLink.classList.remove("w-full");

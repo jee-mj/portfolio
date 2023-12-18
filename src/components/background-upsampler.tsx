@@ -23,7 +23,7 @@ const ImageTransition = ({ imageIndex, transitionDuration }) => (
     style={{
       backgroundImage: `url('./assets/background/bg-${imageIndex}.webp')`,
     }}
-    initial={{ opacity: 0, filter: "blur(0)" }}
+    initial={{ opacity: 0, filter: "blur(0.0745rem)" }}
     animate={{ opacity: 1, filter: "blur(0)" }}
     exit={{ opacity: 0, filter: "blur(1rem)" }}
     transition={{ duration: transitionDuration + transitionDuration + 4 }}
@@ -34,8 +34,8 @@ const BackgroundUpsampler = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [nextImage, setNextImage] = useState(1);
   const [forward, setForward] = useState(true);
-  const totalImages = 4;
-  const transitionDuration = 6;
+  const totalImages = 8;
+  const transitionDuration = 12;
   const preloader = useRef(new ImagePreloader());
 
   useEffect(() => {
@@ -84,7 +84,7 @@ const BackgroundUpsampler = () => {
 
         return newNextImage;
       });
-    }, 16000);
+    }, 26000);
 
     return () => clearInterval(interval);
   }, []);
