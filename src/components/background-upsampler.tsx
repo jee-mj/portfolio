@@ -1,87 +1,93 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+class ImagePreloader {
+  private loadedImages: Set<number>;
+  constructor() {
+    this.loadedImages = new Set();
+  }
+
+  preload(imageIndex: number) {
+    if (this.loadedImages.has(imageIndex)) return;
+
+    const img = new Image();
+    img.src = `./assets/background/bg-${imageIndex}.jpeg`;
+    img.onload = () => this.loadedImages.add(imageIndex);
+  }
+}
+
+const ImageTransition = ({ imageIndex, transitionDuration }) => (
+  <motion.div
+    key={imageIndex}
+    className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
+    style={{ backgroundImage: `url('./assets/background/bg-${imageIndex}.jpeg')` }}
+    initial={{ opacity: 0, filter: 'blur(0)' }}
+    animate={{ opacity: 1, filter: 'blur(0)' }}
+    exit={{ opacity: 0, filter: 'blur(1rem)' }}
+    transition={{ duration: transitionDuration + transitionDuration + 8 }}
+  />
+);
+
 
 const BackgroundUpsampler = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [nextImage, setNextImage] = useState(1);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [forward, setForward] = useState(true); // State to track direction
-  const totalImages = 5;
-  const transitionDuration = .5;
-  const preloadedImagesRef = useRef(new Set());
-
-  const preloadImage = (imageIndex) => {
-    if (preloadedImagesRef.current.has(imageIndex)) {
-      // Image already preloaded, skip loading
-      return;
-    }
-
-    const img = new Image();
-    img.src = `./assets/background/bg-${imageIndex}.jpeg`;
-    img.onload = () => {
-      setIsLoaded(true);
-      preloadedImagesRef.current.add(imageIndex);
-    };
-  };
+  const [forward, setForward] = useState(true);
+  const totalImages = 8;
+  const transitionDuration = 12;
+  const preloader = useRef(new ImagePreloader());
 
   useEffect(() => {
-    preloadImage(nextImage);
+    preloader.current.preload(currentImage);
+    preloader.current.preload(nextImage);
 
     const interval = setInterval(() => {
-      if (isLoaded) {
-        let newNextImage = nextImage;
+      setNextImage((prevNextImage) => {
+        let newNextImage = prevNextImage;
 
-        // Update the direction if at the boundaries
-        if (nextImage >= totalImages && forward) {
-          setForward(false);
-        } else if (nextImage <= 0 && !forward) {
-          setForward(true);
-        }
+        setForward((prevForward) => {
+          let newForward = prevForward;
 
-        // Update the nextImage based on the direction
-        if (forward) {
-          newNextImage = (nextImage + 1 <= totalImages) ? nextImage + 1 : nextImage - 1;
-        } else {
-          newNextImage = (nextImage - 1 >= 0) ? nextImage - 1 : nextImage + 1;
-        }
+          if (prevForward) {
+            if (prevNextImage < totalImages - 1) {
+              newNextImage = prevNextImage + 1;
+              console.log(`previous_image: ${prevNextImage} next_image: ${newNextImage}`);
+            } else {
+              newNextImage = prevNextImage - 1;
+              console.log(`previous_image: ${prevNextImage} next_image: ${newNextImage}`);
+              newForward = false;
+              console.log(`direction: ${newForward ? "forward" : "backward"}`);
+            }
+          } else {
+            if (prevNextImage > 0) {
+              newNextImage = prevNextImage - 1;
+              console.log(`previous_image: ${prevNextImage} next_image: ${newNextImage}`);
+            } else {
+              newNextImage = prevNextImage + 1;
+              console.log(`previous_image: ${prevNextImage} next_image: ${newNextImage}`);
+              newForward = true;
+              console.log(`direction: ${newForward ? "forward" : "backward"}`);
+            }
+          }
+          setCurrentImage(prevNextImage);
+          return newForward;
+        });
 
-        setCurrentImage(nextImage);
-        setNextImage(newNextImage);
-        setIsLoaded(false);
-
-        preloadImage(newNextImage);
-      }
-    }, 500);
+        return newNextImage;
+      });
+    }, 32000);
 
     return () => clearInterval(interval);
-  }, [isLoaded, nextImage, forward]);
-
+  }, []);
 
   return (
-    <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0">
-      <motion.div
-        key={currentImage}
-        className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
-        style={{
-          backgroundImage: `url('./assets/background/bg-${currentImage}.jpeg')`,
-        }}
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: transitionDuration, delay: transitionDuration }}
-      />
-      {nextImage <= totalImages && nextImage >= 1 && (
-        <motion.div
-          key={nextImage}
-          className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: `url('./assets/background/bg-${nextImage}.jpeg')`,
-          }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: transitionDuration }}
-        />
-      )}
+    <div className="absolute bg-black top-0 left-0 right-0 bottom-0 w-full h-full z-0">
+      <AnimatePresence>
+        <ImageTransition key={`current-${currentImage}`} imageIndex={currentImage} transitionDuration={transitionDuration} />
+        {nextImage <= totalImages && nextImage >= 1 && (
+          <ImageTransition key={`next-${nextImage}`} imageIndex={nextImage} transitionDuration={transitionDuration} />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

@@ -161,7 +161,11 @@ import Education from "../components/education.astro";
 
   // Add event listeners to each link element
   linkElements.forEach((linkElement) => {
-    linkElement.addEventListener("click", toggleComponentVisibility);
-    linkElement.addEventListener("touchstart", toggleComponentVisibility);
+    linkElement.addEventListener("click", toggleComponentVisibility, {
+      passive: true,
+    });
+    linkElement.addEventListener("touchstart", toggleComponentVisibility, {
+      passive: true,
+    });
   });
 </script>
