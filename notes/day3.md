@@ -24,3 +24,8 @@ The content structure has already been disemminated in Day 1 as below:
 ## Results
 ## Author's Notes
 ```
+
+A friend mentioned that I should use webp instead of jpegs. I'll add a simple bash script `CompressionSpectraliser.sh` to this `notes/` directory.
+
+That's turned into, using both `webp` and `webm` formats. The corresponding layout pages have been updated.
+

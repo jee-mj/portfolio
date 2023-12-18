@@ -67,7 +67,7 @@ const { title } = Astro.props;
       width="256px"
       class="hidden-video"
     >
-      <source src="./assets/background/earth.mp4" type="video/mp4" />
+      <source src="/assets/background/earth.webm" type="video/webm" />
     </video>
     <video
       autoplay
@@ -79,7 +79,7 @@ const { title } = Astro.props;
       width="256px"
       class="hidden-video"
     >
-      <source src="./assets/background/mars.mp4" type="video/mp4" />
+      <source src="./assets/background/mars.webm" type="video/webm" />
     </video>
 
     <slot />
@@ -94,7 +94,6 @@ const { title } = Astro.props;
       const canvas = canvasElement as HTMLCanvasElement;
       const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
-      // Use the video's metadata to set the canvas size
       video.addEventListener("loadedmetadata", function () {
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
@@ -107,25 +106,55 @@ const { title } = Astro.props;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-            // Process to remove the green screen color
-            let frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            let l = frame.data.length / 4;
-
-            for (let i = 0; i < l; i++) {
-              let r = frame.data[i * 4 + 0];
-              let g = frame.data[i * 4 + 1];
-              let b = frame.data[i * 4 + 2];
-              if (colorMatches(r, g, b, colorTarget, threshold)) {
-                frame.data[i * 4 + 3] = 0;
-              }
-            }
-            ctx.putImageData(frame, 0, 0);
+            // Process to remove the green screen color and add stroke
+            processFrame(
+              ctx,
+              canvas.width,
+              canvas.height,
+              colorTarget,
+              threshold
+            );
 
             requestAnimationFrame(draw);
           }
         };
         draw();
       });
+    }
+
+    function processFrame(ctx, width, height, target, threshold) {
+      let frame = ctx.getImageData(0, 0, width, height);
+      let data = frame.data;
+      let l = data.length / 4;
+
+      // First pass: identify pixels to be made transparent
+      let transparentPixels = new Set();
+      for (let i = 0; i < l; i++) {
+        let r = data[i * 4 + 0];
+        let g = data[i * 4 + 1];
+        let b = data[i * 4 + 2];
+        if (colorMatches(r, g, b, target, threshold)) {
+          transparentPixels.add(i);
+        }
+      }
+
+      // Second pass: extend transparency to adjacent pixels
+      transparentPixels.forEach((index: number) => {
+        let x = index % width;
+        let y = Math.floor(index / width);
+        for (let dy = -1; dy <= 1; dy++) {
+          for (let dx = -1; dx <= 1; dx++) {
+            if (dx !== 0 || dy !== 0) {
+              let newIndex = (y + dy) * width + (x + dx);
+              if (newIndex >= 0 && newIndex < l) {
+                data[newIndex * 4 + 3] = 0; // Set alpha to 0 (transparent)
+              }
+            }
+          }
+        }
+      });
+
+      ctx.putImageData(frame, 0, 0);
     }
 
     function colorMatches(r, g, b, target, threshold) {
@@ -135,9 +164,8 @@ const { title } = Astro.props;
         Math.abs(b - target[2]) < threshold
       );
     }
-
     // Set up video processing for Mars and Earth videos with different thresholds
-    setupVideoProcessing("mars-video", "mars-canvas", [22, 22, 255], 86);
-    setupVideoProcessing("earth-video", "earth-canvas", [233, 0, 81], 86);
+    setupVideoProcessing("mars-video", "mars-canvas", [22, 22, 255], 78);
+    setupVideoProcessing("earth-video", "earth-canvas", [233, 0, 81], 78);
   </script>
 </html>
