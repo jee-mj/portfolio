@@ -8,5 +8,4 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [tailwind(), react(), mdx()],
   site: "https://jee-mj.github.io",
-  base: "/portfolio"
 });
