@@ -1,13 +1,8 @@
----
-import Test from "../components/test.tsx";
----
-
 <section class="w-full h-full flex-row z-20 hidden" id="education">
   <div
-    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto"
+    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20"
     id="education-content"
   >
-    <Test client:load />
   </div>
   <div
     class="w-full h-full flex flex-col p-4 pl-0 transition-all duration-500"
@@ -18,7 +13,7 @@ import Test from "../components/test.tsx";
     <div id="bottomRight" class="w-full h-full flex flex-col items-center">
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
-        class="font-smooch border border-solid
+        class="font-smooch border border-solid z-50
         hover:bg-secondary hover:text-white active:text-secondary transition-all duration-500
         border-white w-full h-1/2 grid content-center bg-primary text-black shadow-sm shadow-black"
         id="education-link">Study</a

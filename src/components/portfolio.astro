@@ -1,3 +1,7 @@
+---
+import PortfolioCard from "./portfoliocard.astro";
+---
+
 <section class="w-full h-full flex-col hidden z-20" id="portfolio">
   <div
     class="w-full h-[36vh] flex flex-row p-4 pb-0 transition-all duration-500 z-50"
@@ -33,172 +37,18 @@
                 <h2 class="text-3xl font-bold tracking-tight text-white">
                   Welcome to my portfolio!
                 </h2>
-                <p class="mt-6 text-lg leading-8 text-white">
+                <p class="mt-6 mb-16 text-lg leading-8 text-white">
                   I am a passionate developer with a diverse background across
-                  Front-End, Back-End, and API/Database Development. My journey
-                  in technology, influenced by a family business ethos, has
-                  shaped a strong work ethic and a drive for continuous
-                  learning.
-                </p>
-                <p class="mt-6 text-lg leading-8 text-white">
-                  This portfolio, a static showcase of my capabilities, is
-                  complemented by my concurrent focus on enhancing my skills in
-                  animation, utilizing both ReactJS-based and TailwindCSS-based
-                  techniques. The dynamic transitions between the home page and
-                  various sections are crafted using Tailwind, while the
-                  animations within each section are achieved using React.
+                  Front-End, Back-End, and API/Database Development.
                 </p>
               </div>
-              <div
-                class="hidden xl:flex mx-auto w-full h-full bg-purple-400 xl:mx-0 flex-grow"
-              >
-                <div class="w-full h-full">test</div>
-              </div>
-            </div>
 
-            <div class="mx-auto w-full xl:mx-0">
-              <h2 class="text-3xl font-bold tracking-tight text-gray-900">
-                Technologies
-              </h2>
-              <p class="my-6 text-lg leading-8 text-gray-600">
-                <div class="grid grid-cols-5 mb-8">
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/Git.svg"
-                    alt="Git"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/Cs.svg"
-                    alt="C#"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/PHP.svg"
-                    alt="PHP"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/Python.svg"
-                    alt="Python"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/Laravel.svg"
-                    alt="Laravel"
-                  />
-                </div>
-                <div class="grid grid-cols-5 mb-8">
-                  <img
-                    class="h-10 w-auto m-auto pt-2 rounded"
-                    src="./assets/tools/.NET.svg"
-                    alt="DotNET"
-                  />
-                  <img
-                    class="h-10 w-auto m-auto pt-2"
-                    src="./assets/tools/Node.JS.svg"
-                    alt="Node.JS"
-                  />
-                  <img
-                    class="h-12 w-auto m-auto py-2"
-                    src="./assets/tools/Nuget.svg"
-                    alt="Nuget"
-                  />
-                  <div class="flex flex-row self-start pt-2">
-                    <img
-                      class="h-6 w-auto m-auto pt-2"
-                      src="./assets/tools/NPM.svg"
-                      alt="NPM"
-                    />
-                  </div>
-                  <img
-                    class="h-11 w-auto m-auto"
-                    src="./assets/tools/Composer.svg"
-                    alt="Composer"
-                  />
-                </div>
-                <div class="grid grid-cols-5 mb-8">
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/MariaDB.svg"
-                    alt="MariaDB"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/MongoDB.svg"
-                    alt="MongoDB"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/CosmosDB.png"
-                    alt="CosmosDB"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/Redis.svg"
-                    alt="Redis"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto bg-[#fe356f] rounded"
-                    src="./assets/tools/Mermaid.JS.svg"
-                    alt="Mermaid.JS"
-                  />
-                </div>
-                <div class="grid grid-cols-5 mb-8">
-                  <img
-                    class="h-10 w-auto m-auto"
-                    src="./assets/tools/Astro.svg"
-                    alt="Astro"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/NextJS.svg"
-                    alt="Next.JS"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/Vite.svg"
-                    alt="Vite"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto py-1"
-                    src="./assets/tools/Tailwind.svg"
-                    alt="Tailwind"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto my-1"
-                    src="./assets/tools/Bootstrap.svg"
-                    alt="Bootstrap"
-                  />
-                </div>
-                <div class="grid grid-cols-5 mb-8">
-                  <img
-                    class="h-9 w-auto m-auto"
-                    src="./assets/tools/React.svg"
-                    alt="React"
-                  />
-                  <img
-                    class="h-9 w-auto m-auto"
-                    src="./assets/tools/GraphQL.svg"
-                    alt="GraphQL"
-                  />
-                  <img
-                    class="h-10 w-auto m-auto rounded"
-                    src="./assets/tools/Foundation.jpg"
-                    alt="Foundation"
-                  />
-                  <img
-                    class="h-8 w-auto m-auto"
-                    src="./assets/tools/Docker.svg"
-                    alt="Docker"
-                  />
-                  <img
-                    class="h-10 w-auto m-auto"
-                    src="./assets/tools/Debian.svg"
-                    alt="Debian"
-                  />
-                </div>
-              </p>
+              <div class="mx-auto w-full xl:mx-0">
+                <h2 class="text-3xl font-bold tracking-tight text-white mb-8">
+                  Technologies
+                </h2>
+                <PortfolioCard client:load />
+              </div>
             </div>
           </div>
         </div>
@@ -220,21 +70,18 @@
   const portfolioLabel = document.getElementById("portfolio-label");
 
   document.addEventListener("sectionLoadEvent", function () {
-    if (!portfolioLink.classList.contains("hover:bg-secondary")) {
-      portfolioLink.classList.add("hover:bg-secondary");
-    }
     setTimeout(() => {
+      // Animate dimensions using tailwind
       portfolioLink.classList.remove("w-1/2");
       portfolioLabel.classList.remove("h-[36vh]");
       portfolioLabel.classList.add("h-1/6");
-      portfolioLink.classList.remove("hover:w-full");
+      portfolioLink.classList.remove("hover:w-full"); // necessary for expand behaviour
       portfolioLink.classList.add("w-full");
     }, 500);
   });
 
   document.addEventListener("sectionUnloadEvent", function () {
     setTimeout(() => {
-      portfolioLink.classList.remove("hover:bg-secondary");
       portfolioLabel.classList.remove("h-1/6");
       portfolioLabel.classList.add("h-[36vh]");
       portfolioLink.classList.remove("w-full");
@@ -242,7 +89,7 @@
       document.getElementById("portfolio-label").classList.add("w-full");
       document.getElementById("portfolio-label").classList.remove("w-1/2");
       setTimeout(() => {
-        portfolioLink.classList.add("hover:w-full");
+        portfolioLink.classList.add("hover:w-full"); // necessary for expand behaviour
       }, 1500);
     }, 50);
   });
