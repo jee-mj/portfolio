@@ -1,0 +1,13 @@
+---
+import AnimatedBackground from "../bg/animated-background.tsx";
+import Planets from "../bg/video.astro";
+---
+
+<div class="background">
+  <div class="bg-black absolute w-full h-4 z-50 top-0"></div>
+  <div class="bg-black absolute w-full h-4 z-50 bottom-0"></div>
+  <div class="bg-black absolute w-4 h-full z-50 left-0"></div>
+  <div class="bg-black absolute w-4 h-full z-50 right-0"></div>
+  <Planets />
+  <AnimatedBackground client:idle />
+</div>

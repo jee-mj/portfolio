@@ -11,7 +11,7 @@ class ImagePreloader {
     if (this.loadedImages.has(imageIndex)) return;
 
     const img = new Image();
-    img.src = `./assets/background/bg-${imageIndex}.webp`;
+    img.src = `./portfolio/assets/background/bg-${imageIndex}.webp`;
     img.onload = () => this.loadedImages.add(imageIndex);
   }
 }
@@ -21,7 +21,7 @@ const ImageTransition = ({ imageIndex, transitionDuration }) => (
     key={imageIndex}
     className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
     style={{
-      backgroundImage: `url('./assets/background/bg-${imageIndex}.webp')`,
+      backgroundImage: `url('./portfolio/assets/background/bg-${imageIndex}.webp')`,
     }}
     initial={{ opacity: 0, filter: "blur(0.0745rem)" }}
     animate={{ opacity: 1, filter: "blur(0)" }}
@@ -30,7 +30,7 @@ const ImageTransition = ({ imageIndex, transitionDuration }) => (
   />
 );
 
-const BackgroundUpsampler = () => {
+const AnimatedBackground = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [nextImage, setNextImage] = useState(1);
   const [forward, setForward] = useState(true);
@@ -109,4 +109,4 @@ const BackgroundUpsampler = () => {
   );
 };
 
-export default BackgroundUpsampler;
+export default AnimatedBackground;
