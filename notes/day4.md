@@ -63,3 +63,13 @@ It translates well to a space theme thanks to the tireless work of a great pleth
 ## Work / Education
 
 Both Work and Education will share the same heading styling as the About Page, but the animations will be reversing the translate>rotate function instead of playing it forwards.
+
+## Notes
+
+I haven't been writing down the interactions and it is becoming difficult to keep track of it as there are many interactions.
+
+Had to spend half of Day 4 to be a helpful IT guy which didn't really help this cause but that's fine, I managed to synchronise my sleep with the sun in the middle of this project...
+
+I'll work on the sections all at once, revisiting the tailwind after merging back and calling for Day 4.5.
+
+We can't be officially on Day 5 because Day 5 begins with a review process, but we can't be on Day 4 because I have slept.
