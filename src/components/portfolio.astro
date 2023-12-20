@@ -1,6 +1,7 @@
 ---
 import PortfolioCard from "./portfoliocard.astro";
-import Test from "../content/portfolio/index.md";
+import MainText from "../content/portfolio/main-text.md";
+import MainTitle from "../content/portfolio/main-title.md";
 ---
 
 <section class="w-full h-full flex-col hidden z-20" id="portfolio">
@@ -15,7 +16,7 @@ import Test from "../content/portfolio/index.md";
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid shadow-sm hover:w-full
-          hover:text-[#ffcd00] hover:border-[#ffcd00] active:text-secondary transition-all duration-200
+          hover:text-[#ffcd00] hover:border-[#ffcd00] transition-all duration-200
           bg-secondary text-white border-white shadow-black
           w-1/2 h-full content-center
           grid"
@@ -35,14 +36,12 @@ import Test from "../content/portfolio/index.md";
           <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
             <div class="xl:flex xl:flex-row">
               <div class="mx-auto w-full xl:mx-0">
-                <h2 class="text-3xl font-bold tracking-tight text-white">
-                  Welcome to my portfolio!
-                </h2>
-                <p class="mt-6 mb-16 text-lg leading-8 text-white">
-                  I am a passionate developer with a diverse background across
-                  Front-End, Back-End, and API/Database Development.
-                  <Test />
-                </p>
+                <div class="text-3xl font-bold tracking-tight text-white">
+                  <MainTitle />
+                </div>
+                <div class="mt-6 mb-16 text-lg leading-8 text-white">
+                  <MainText />
+                </div>
               </div>
 
               <div class="mx-auto w-full xl:mx-0">

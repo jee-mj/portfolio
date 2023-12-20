@@ -1,38 +1,53 @@
+---
+import MainText from "../content/csharp/main-text.md";
+import MainTitle from "../content/csharp/main-title.md";
+---
+
 <section class="w-full h-full flex-row z-20 hidden" id="csharp">
   <div
     class="w-full h-full flex flex-col p-4 pr-0 transition-all duration-500 z-50"
     id="csharp-label"
   >
-    <div id="csharp-space" class="w-full h-full transition-all duration-500">
+    <div
+      id="csharp-space"
+      class="w-full h-full transition-all duration-500 bg-[#22222288]"
+    >
     </div>
     <div
       id="bottomLeft"
-      class="w-full h-full flex flex-row-reverse items-center"
+      class="w-full h-full flex flex-row-reverse items-center bg-[#22222288]"
     >
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid
-        hover:bg-secondary hover:text-white active:text-secondary transition-all duration-500
-        border-white w-1/2 h-full grid content-center justify-center bg-primary text-black shadow-sm shadow-black"
+        hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
+        border-white w-1/2 h-full grid content-center justify-center bg-secondary text-white shadow-sm shadow-black"
         id="csharp-link">C#<br /><span>2022</span></a
       >
     </div>
   </div>
   <div
-    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20"
+    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-[#22222288]"
     id="csharp-content"
   >
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">BeanScene</h3>
-    <p class="text-lg sm:text-xl md:text-2xl">
-      BeanScene is a private cafe that requires clients to reserve or otherwise
-      arrange their seating prior to arrival.
-    </p>
-    <p class="text-lg sm:text-xl md:text-2xl">
-      The website is built using ASP.NET Core MVC and Entity Framework Core.
-      Foundation Sites is used as the front-end styling solution.
-    </p>
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">Resources</h3>
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">Notes</h3>
+    <div class="mb-8 ml-4">
+      <div class="pb-8 pt-4 sm:pb-4">
+        <div class="mx-auto">
+          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
+            <div class="xl:flex xl:flex-row">
+              <div class="mx-auto w-full xl:mx-0">
+                <div class="text-3xl font-bold tracking-tight text-white">
+                  <MainTitle />
+                </div>
+                <div class="mt-6 mb-16 text-lg leading-8 text-white">
+                  <MainText />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <style>
