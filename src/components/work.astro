@@ -3,14 +3,17 @@ import MainText from "../content/work/main-text.md";
 import MainTitle from "../content/work/main-title.md";
 ---
 
-<section class="w-full h-full flex-row z-20 hidden" id="work">
+<section
+  class="w-full h-full flex-row z-20 hidden transition-all duration-1000"
+  id="work"
+>
   <div
     class="w-full h-full flex flex-col p-4 pr-0 transition-all duration-500 z-50"
     id="work-label"
   >
     <div
       id="topLeft"
-      class="w-full h-full flex flex-col-reverse items-center bg-[#22222288]"
+      class="w-full h-full flex flex-col-reverse items-center bg-tertiary"
     >
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
@@ -23,12 +26,12 @@ import MainTitle from "../content/work/main-title.md";
     </div>
     <div
       id="work-space"
-      class="w-full h-full transition-all duration-500 bg-[#22222288]"
+      class="w-full h-full transition-all duration-500 bg-tertiary"
     >
     </div>
   </div>
   <div
-    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-[#22222288]"
+    class="w-full h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
     id="work-content"
   >
     <div class="mb-8 ml-4">
@@ -76,7 +79,6 @@ import MainTitle from "../content/work/main-title.md";
       setTimeout(() => {
         document.getElementById("work-label").classList.remove("w-full");
         document.getElementById("work-label").classList.add("w-1/2");
-        document.getElementById("work-content").classList.remove("text-white");
       }, 150);
     }, 500);
   });
@@ -91,6 +93,5 @@ import MainTitle from "../content/work/main-title.md";
     workLink.classList.add("h-1/2");
     document.getElementById("work-label").classList.add("w-full");
     document.getElementById("work-label").classList.remove("w-1/2");
-    document.getElementById("work-content").classList.add("text-white");
   });
 </script>

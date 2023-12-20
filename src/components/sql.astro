@@ -5,7 +5,7 @@ import MainTitle from "../content/sql/main-title.md";
 
 <section class="w-full h-full flex-row z-20 hidden" id="sql">
   <div
-    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-[#22222288]"
+    class="w-full h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
     id="sql-content"
   >
     <div class="mb-8 ml-4">
@@ -33,7 +33,7 @@ import MainTitle from "../content/sql/main-title.md";
   >
     <div
       id="topRight"
-      class="w-full h-full flex flex-row-reverse items-center bg-[#22222288]"
+      class="w-full h-full flex flex-row-reverse items-center bg-tertiary"
     >
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
@@ -45,7 +45,7 @@ import MainTitle from "../content/sql/main-title.md";
     </div>
     <div
       id="sql-space"
-      class="w-full h-full transition-all duration-500 bg-[#22222288]"
+      class="w-full h-full transition-all duration-500 bg-tertiary"
     >
     </div>
   </div>
@@ -71,7 +71,6 @@ import MainTitle from "../content/sql/main-title.md";
       setTimeout(() => {
         document.getElementById("sql-label").classList.remove("w-full");
         document.getElementById("sql-label").classList.add("w-1/2");
-        document.getElementById("sql-content").classList.remove("text-white");
       }, 150);
       setTimeout(() => {
         sqlSpace.classList.remove("h-full");
@@ -82,7 +81,6 @@ import MainTitle from "../content/sql/main-title.md";
 
   // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
-    document.getElementById("sql-content").classList.add("text-white");
     sqlSpace.classList.remove("h-0");
     sqlSpace.classList.add("h-full");
     sqlLink.classList.remove("w-full");

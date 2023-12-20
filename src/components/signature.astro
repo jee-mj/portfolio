@@ -3,12 +3,9 @@ import MainText from "../content/signature/main-text.md";
 import MainTitle from "../content/signature/main-title.md";
 ---
 
-<section
-  class="w-full h-full flex-col z-20 hidden bg-[#22222288]"
-  id="signature"
->
+<section class="w-full h-full flex-col z-20 hidden" id="signature">
   <div
-    class="w-full h-full p-4 pb-0 text-white transition-all duration-600 inline-block overflow-y-auto z-20"
+    class="w-[calc(100vw-2rem)] h-full ml-4 pb-0 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
     id="signature-content"
   >
     <div class="mb-8 ml-4">
@@ -31,7 +28,7 @@ import MainTitle from "../content/signature/main-title.md";
     </div>
   </div>
   <div
-    class="w-full h-[36vh] flex flex-row-reverse p-4 transition-all duration-500 z-50"
+    class="w-[calc(100vw-2rem)] h-[36vh] flex flex-row-reverse transition-all duration-500 z-50 bg-tertiary mx-4 mb-4"
     id="signature-label"
   >
     <a
@@ -44,7 +41,7 @@ import MainTitle from "../content/signature/main-title.md";
         bg-secondary text-white shadow-sm shadow-black"
       id="signature-link">jee-mj</a
     >
-    <div id="signature-space" class="h-full w-auto bg-[#22222288]"></div>
+    <div id="signature-space" class="h-full w-auto bg-tertiary"></div>
   </div>
 </section>
 
@@ -65,23 +62,20 @@ import MainTitle from "../content/signature/main-title.md";
       signatureLink.classList.remove("w-1/2");
       signatureLink.classList.remove("hover:w-full");
       signatureLink.classList.add("w-full");
-      setTimeout(() => {
-        document
-          .getElementById("signature-content")
-          .classList.remove("text-white");
-      }, 150);
+      setTimeout(() => {}, 150);
     }, 500);
   });
 
   // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
-    document.getElementById("signature-content").classList.add("text-white");
     signatureLink.classList.remove("w-full");
     signatureLink.classList.add("w-1/2");
     setTimeout(() => {
       signatureLink.classList.add("hover:w-full");
     }, 1500);
-    document.getElementById("signature-label").classList.add("w-full");
+    document
+      .getElementById("signature-label")
+      .classList.add("w-[calc(100vw-2rem)]");
     document.getElementById("signature-label").classList.remove("w-1/2");
   });
 </script>

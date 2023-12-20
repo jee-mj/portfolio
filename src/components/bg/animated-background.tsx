@@ -19,7 +19,7 @@ class ImagePreloader {
 const ImageTransition = ({ imageIndex, transitionDuration }) => (
   <motion.div
     key={imageIndex}
-    className="absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center"
+    className="absolute top-4 left-4 right-4 bottom-4 w-[calc(100vw-2rem)] h-[calc-100vh-2rem] bg-cover bg-center"
     style={{
       backgroundImage: `url('./assets/background/bg-${imageIndex}.webp')`,
     }}
@@ -52,30 +52,30 @@ const AnimatedBackground = () => {
           if (prevForward) {
             if (prevNextImage < totalImages - 1) {
               newNextImage = prevNextImage + 1;
-              console.log(
-                `previous_image: ${prevNextImage} next_image: ${newNextImage}`
-              );
+              // console.log(
+              //   `previous_image: ${prevNextImage} next_image: ${newNextImage}`
+              // );
             } else {
               newNextImage = prevNextImage - 1;
-              console.log(
-                `previous_image: ${prevNextImage} next_image: ${newNextImage}`
-              );
+              // console.log(
+              //   `previous_image: ${prevNextImage} next_image: ${newNextImage}`
+              // );
               newForward = false;
-              console.log(`direction: ${newForward ? "forward" : "backward"}`);
+              // console.log(`direction: ${newForward ? "forward" : "backward"}`);
             }
           } else {
             if (prevNextImage > 0) {
               newNextImage = prevNextImage - 1;
-              console.log(
-                `previous_image: ${prevNextImage} next_image: ${newNextImage}`
-              );
+              // console.log(
+              //   `previous_image: ${prevNextImage} next_image: ${newNextImage}`
+              // );
             } else {
               newNextImage = prevNextImage + 1;
-              console.log(
-                `previous_image: ${prevNextImage} next_image: ${newNextImage}`
-              );
+              // console.log(
+              //   `previous_image: ${prevNextImage} next_image: ${newNextImage}`
+              // );
               newForward = true;
-              console.log(`direction: ${newForward ? "forward" : "backward"}`);
+              // console.log(`direction: ${newForward ? "forward" : "backward"}`);
             }
           }
           setCurrentImage(prevNextImage);
