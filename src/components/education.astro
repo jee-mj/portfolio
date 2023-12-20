@@ -5,7 +5,7 @@ import MainTitle from "../content/education/main-title.md";
 
 <section class="w-full h-full flex-row z-20 hidden" id="education">
   <div
-    class="w-full h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
+    class="w-full h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-100 inline-block overflow-y-auto z-20 bg-none"
     id="education-content"
   >
     <div class="mb-8 ml-4">
@@ -13,7 +13,9 @@ import MainTitle from "../content/education/main-title.md";
         <div class="mx-auto">
           <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
             <div class="xl:flex xl:flex-row">
-              <div class="mx-auto w-full xl:mx-0">
+              <div
+                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
+              >
                 <div class="text-3xl font-bold tracking-tight text-white">
                   <MainTitle />
                 </div>
@@ -31,15 +33,9 @@ import MainTitle from "../content/education/main-title.md";
     class="w-full h-full flex flex-col p-4 pl-0 transition-all z-50 duration-500"
     id="education-label"
   >
-    <div
-      id="education-space"
-      class="w-full h-full transition-all duration-500 bg-tertiary"
-    >
+    <div id="education-space" class="w-full h-full transition-all duration-500">
     </div>
-    <div
-      id="bottomRight"
-      class="w-full h-full flex flex-col items-center bg-tertiary"
-    >
+    <div id="bottomRight" class="w-full h-full flex flex-col items-center">
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid z-50

@@ -142,8 +142,26 @@ import Education from "../components/education.astro";
           sectionToToggle.classList.remove("hidden");
           sectionToToggle.classList.add("flex");
         }, 400);
+        setTimeout(() => {
+          document.querySelectorAll(".bg-none").forEach((e) => {
+            e.classList.remove("bg-none");
+            e.classList.add("bg-tertiary");
+          });
+          document.querySelectorAll(".section-content").forEach((e) => {
+            e.classList.remove("opacity-0");
+            e.classList.add("opacity-100");
+          });
+        }, 1000);
       } else {
         document.dispatchEvent(sectionUnloadEvent);
+        document.querySelectorAll(".section-content").forEach((e) => {
+          e.classList.remove("opacity-100");
+          e.classList.add("opacity-0");
+        });
+        document.querySelectorAll(".bg-tertiary").forEach((e) => {
+          e.classList.remove("bg-tertiary");
+          e.classList.add("bg-none");
+        });
         //document.querySelectorAll(".bg-white").forEach((item) => {
         //  item.classList.remove("bg-white");
         //  item.classList.add("bg-secondary");
