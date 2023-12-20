@@ -33,8 +33,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Create .nojekyll file
-        run: touch ${{ env.BUILD_PATH }}/dist/.nojekyll
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
@@ -72,6 +70,8 @@ jobs:
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
+      - name: Create .nojekyll file
+        run: touch ${{ env.BUILD_PATH }}/dist/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
