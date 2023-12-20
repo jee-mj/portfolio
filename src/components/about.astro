@@ -6,7 +6,7 @@ import MainSubtext from "../content/about/main-subtext.md";
 
 <section class="w-full h-full flex-row z-20 hidden" id="about">
   <div
-    class="w-full h-[calc(100vh-2rem)] my-4 ml-4 transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
+    class="w-full h-[calc(100vh-2rem)] my-4 ml-4 transition-all duration-100 inline-block overflow-y-auto z-20 bg-none"
     id="about-content"
   >
     <div class="mb-8 ml-4">
@@ -14,7 +14,9 @@ import MainSubtext from "../content/about/main-subtext.md";
         <div class="mx-auto">
           <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
             <div class="xl:flex xl:flex-row">
-              <div class="mx-auto w-full xl:mx-0">
+              <div
+                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
+              >
                 <div class="text-3xl font-bold tracking-tight text-white">
                   <MainTitle />
                 </div>
@@ -32,10 +34,7 @@ import MainSubtext from "../content/about/main-subtext.md";
     class="w-full h-full flex flex-col p-4 pl-0 transition-all duration-500 z-50"
     id="about-label"
   >
-    <div
-      id="topRight"
-      class="w-full h-full flex flex-row items-center bg-tertiary"
-    >
+    <div id="topRight" class="w-full h-full flex flex-row items-center">
       <a
         style="font-size: clamp(2em, 5vw, 4em);"
         class="font-smooch border border-solid
@@ -47,10 +46,7 @@ import MainSubtext from "../content/about/main-subtext.md";
         A<br />b<br />o<br />u<br />t</a
       >
     </div>
-    <div
-      id="about-space"
-      class="w-full h-full transition-all duration-500 bg-tertiary"
-    >
+    <div id="about-space" class="w-full h-full transition-all duration-500">
     </div>
   </div>
 </section>

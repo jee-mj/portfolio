@@ -5,7 +5,7 @@ import MainTitle from "../content/signature/main-title.md";
 
 <section class="w-full h-full flex-col z-20 hidden" id="signature">
   <div
-    class="w-[calc(100vw-2rem)] h-full ml-4 pb-0 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
+    class="w-[calc(100vw-2rem)] h-full ml-4 pb-0 text-white transition-all duration-100 inline-block overflow-y-auto z-20 bg-none"
     id="signature-content"
   >
     <div class="mb-8 ml-4">
@@ -13,7 +13,9 @@ import MainTitle from "../content/signature/main-title.md";
         <div class="mx-auto">
           <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
             <div class="xl:flex xl:flex-row">
-              <div class="mx-auto w-full xl:mx-0">
+              <div
+                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
+              >
                 <div class="text-3xl font-bold tracking-tight text-white">
                   <MainTitle />
                 </div>
@@ -28,7 +30,7 @@ import MainTitle from "../content/signature/main-title.md";
     </div>
   </div>
   <div
-    class="w-[calc(100vw-2rem)] h-[36vh] flex flex-row-reverse transition-all duration-500 z-50 bg-tertiary mx-4 mb-4"
+    class="w-[calc(100vw-2rem)] h-[36vh] flex flex-row-reverse transition-all duration-500 z-50 mx-4 mb-4"
     id="signature-label"
   >
     <a
@@ -41,7 +43,7 @@ import MainTitle from "../content/signature/main-title.md";
         bg-secondary text-white shadow-sm shadow-black"
       id="signature-link">jee-mj</a
     >
-    <div id="signature-space" class="h-full w-auto bg-tertiary"></div>
+    <div id="signature-space" class="h-full w-auto"></div>
   </div>
 </section>
 
