@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import About from "../components/about.astro";
 import SQL from "../components/sql.astro";
 import PHP from "../components/php.astro";
@@ -13,12 +12,12 @@ import Education from "../components/education.astro";
 
 <Layout title="My Portfolio">
   <Portfolio />
-  <Work />
-  <PHP />
-  <Csharp />
-  <About />
-  <SQL />
   <Education />
+  <Work />
+  <About />
+  <Csharp />
+  <PHP />
+  <SQL />
   <Signature />
 </Layout>
 <main class="w-full h-full flex flex-row" id="main">
@@ -102,7 +101,9 @@ import Education from "../components/education.astro";
             text-[#ffcd00] border-secondary
             w-full h-full content-center justify-end
             grid"
-        id="signature-link">jee-mj</a
+        id="signature-link"
+      >
+        WIP</a
       >
     </div>
   </div>

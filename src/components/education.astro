@@ -1,21 +1,51 @@
+---
+import MainText from "../content/education/main-text.md";
+import MainTitle from "../content/education/main-title.md";
+---
+
 <section class="w-full h-full flex-row z-20 hidden" id="education">
   <div
-    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20"
+    class="w-full h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
     id="education-content"
   >
+    <div class="mb-8 ml-4">
+      <div class="pb-8 pt-4 sm:pb-4">
+        <div class="mx-auto">
+          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
+            <div class="xl:flex xl:flex-row">
+              <div class="mx-auto w-full xl:mx-0">
+                <div class="text-3xl font-bold tracking-tight text-white">
+                  <MainTitle />
+                </div>
+                <div class="mt-6 mb-16 text-lg leading-8 text-white">
+                  <MainText />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div
-    class="w-full h-full flex flex-col p-4 pl-0 transition-all duration-500"
+    class="w-full h-full flex flex-col p-4 pl-0 transition-all z-50 duration-500"
     id="education-label"
   >
-    <div id="education-space" class="w-full h-full transition-all duration-500">
+    <div
+      id="education-space"
+      class="w-full h-full transition-all duration-500 bg-tertiary"
+    >
     </div>
-    <div id="bottomRight" class="w-full h-full flex flex-col items-center">
+    <div
+      id="bottomRight"
+      class="w-full h-full flex flex-col items-center bg-tertiary"
+    >
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid z-50
-        hover:bg-secondary hover:text-white active:text-secondary transition-all duration-500
-        border-white w-full h-1/2 grid content-center bg-primary text-black shadow-sm shadow-black"
+        hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-200
+        border-white bg-secondary text-white shadow-sm shadow-black
+        w-full h-1/2 grid content-center"
         id="education-link">Study</a
       >
     </div>
@@ -46,16 +76,12 @@
       setTimeout(() => {
         document.getElementById("education-label").classList.remove("w-full");
         document.getElementById("education-label").classList.add("w-1/2");
-        document
-          .getElementById("education-content")
-          .classList.remove("text-white");
       }, 150);
     }, 500);
   });
 
   // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
-    document.getElementById("education-content").classList.add("text-white");
     educationSpace.classList.remove("h-0");
     educationSpace.classList.add("h-full");
     educationLink.classList.remove("h-full");

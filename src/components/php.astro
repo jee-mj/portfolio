@@ -1,33 +1,53 @@
+---
+import MainText from "../content/php/main-text.md";
+import MainTitle from "../content/php/main-title.md";
+---
+
 <section class="w-full h-full flex-row z-20 hidden" id="php">
   <div
     class="w-full h-full flex flex-col p-4 pr-0 transition-all duration-500 z-50"
     id="php-label"
   >
-    <div id="php-space" class="w-full h-full transition-all duration-500"></div>
-    <div id="bottomLeft" class="w-full h-full flex flex-row items-center">
+    <div
+      id="php-space"
+      class="w-full h-full transition-all duration-500 bg-tertiary"
+    >
+    </div>
+    <div
+      id="bottomLeft"
+      class="w-full h-full flex flex-row items-center bg-tertiary"
+    >
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid
-        hover:bg-secondary hover:text-white active:text-secondary transition-all duration-500
-        border-white w-1/2 h-full grid content-center justify-center bg-primary text-black shadow-sm shadow-black"
+        hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
+        border-white w-1/2 h-full grid content-center justify-center bg-secondary text-white shadow-sm shadow-black"
         id="php-link">PHP<br /><span>2023</span></a
       >
     </div>
   </div>
   <div
-    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20"
+    class="w-full h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
     id="php-content"
   >
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">Sports Wholesalers</h3>
-    <p class="text-lg sm:text-xl md:text-2xl">
-      Sports Wholesalers are a sports equipment wholesaler looking to expand
-      their business online.
-    </p>
-    <p class="text-lg sm:text-xl md:text-2xl">
-      The website was built from scratch using HTML, CSS, JS, PHP8.2 and nginx.
-    </p>
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">Resources</h3>
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">Notes</h3>
+    <div class="mb-8 ml-4">
+      <div class="pb-8 pt-4 sm:pb-4">
+        <div class="mx-auto">
+          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
+            <div class="xl:flex xl:flex-row">
+              <div class="mx-auto w-full xl:mx-0">
+                <div class="text-3xl font-bold tracking-tight text-white">
+                  <MainTitle />
+                </div>
+                <div class="mt-6 mb-16 text-lg leading-8 text-white">
+                  <MainText />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -56,7 +76,6 @@
       setTimeout(() => {
         document.getElementById("php-label").classList.remove("w-full");
         document.getElementById("php-label").classList.add("w-1/2");
-        document.getElementById("php-content").classList.remove("text-white");
       }, 150);
     }, 500);
   });
@@ -69,6 +88,5 @@
     phpLink.classList.add("w-1/2");
     document.getElementById("php-label").classList.add("w-full");
     document.getElementById("php-label").classList.remove("w-1/2");
-    document.getElementById("php-content").classList.add("text-white");
   });
 </script>

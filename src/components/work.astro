@@ -1,26 +1,57 @@
-<section class="w-full h-full flex-row z-20 hidden" id="work">
+---
+import MainText from "../content/work/main-text.md";
+import MainTitle from "../content/work/main-title.md";
+---
+
+<section
+  class="w-full h-full flex-row z-20 hidden transition-all duration-1000"
+  id="work"
+>
   <div
     class="w-full h-full flex flex-col p-4 pr-0 transition-all duration-500 z-50"
     id="work-label"
   >
-    <div id="topLeft" class="w-full h-full flex flex-col-reverse items-center">
+    <div
+      id="topLeft"
+      class="w-full h-full flex flex-col-reverse items-center bg-tertiary"
+    >
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid
-        hover:bg-secondary hover:text-white active:text-secondary transition-all duration-200
-        border-white bg-primary text-black shadow-sm shadow-black
+        hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-200
+        border-white bg-secondary text-white shadow-sm shadow-black
         w-full h-1/2 grid content-center"
         id="work-link">Work</a
       >
     </div>
-    <div id="work-space" class="w-full h-full transition-all duration-500">
+    <div
+      id="work-space"
+      class="w-full h-full transition-all duration-500 bg-tertiary"
+    >
     </div>
   </div>
   <div
-    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20"
+    class="w-full h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
     id="work-content"
   >
-    <h1></h1>
+    <div class="mb-8 ml-4">
+      <div class="pb-8 pt-4 sm:pb-4">
+        <div class="mx-auto">
+          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
+            <div class="xl:flex xl:flex-row">
+              <div class="mx-auto w-full xl:mx-0">
+                <div class="text-3xl font-bold tracking-tight text-white">
+                  <MainTitle />
+                </div>
+                <div class="mt-6 mb-16 text-lg leading-8 text-white">
+                  <MainText />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -48,7 +79,6 @@
       setTimeout(() => {
         document.getElementById("work-label").classList.remove("w-full");
         document.getElementById("work-label").classList.add("w-1/2");
-        document.getElementById("work-content").classList.remove("text-white");
       }, 150);
     }, 500);
   });
@@ -63,6 +93,5 @@
     workLink.classList.add("h-1/2");
     document.getElementById("work-label").classList.add("w-full");
     document.getElementById("work-label").classList.remove("w-1/2");
-    document.getElementById("work-content").classList.add("text-white");
   });
 </script>

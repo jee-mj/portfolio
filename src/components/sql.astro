@@ -1,34 +1,53 @@
+---
+import MainText from "../content/sql/main-text.md";
+import MainTitle from "../content/sql/main-title.md";
+---
+
 <section class="w-full h-full flex-row z-20 hidden" id="sql">
   <div
-    class="w-full h-full p-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20"
+    class="w-full h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-600 inline-block overflow-y-auto z-20 bg-tertiary"
     id="sql-content"
   >
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">SQL: Data Management</h3>
-    <p class="text-lg sm:text-xl md:text-2xl">
-      Anthony's Fast Food is a restaurant looking to expand online.
-    </p>
-    <p class="text-lg sm:text-xl md:text-2xl">
-      The business requirements have been gathered and the database has been
-      designed.
-    </p>
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">Resources</h3>
-    <h3 class="text-2xl sm:text-4xl md:text-6xl">Notes</h3>
-    <p></p>
+    <div class="mb-8 ml-4">
+      <div class="pb-8 pt-4 sm:pb-4">
+        <div class="mx-auto">
+          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
+            <div class="xl:flex xl:flex-row">
+              <div class="mx-auto w-full xl:mx-0">
+                <div class="text-3xl font-bold tracking-tight text-white">
+                  <MainTitle />
+                </div>
+                <div class="mt-6 mb-16 text-lg leading-8 text-white">
+                  <MainText />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div
     class="w-full h-full flex flex-col p-4 pl-0 transition-all duration-500 z-50"
     id="sql-label"
   >
-    <div id="topRight" class="w-full h-full flex flex-row-reverse items-center">
+    <div
+      id="topRight"
+      class="w-full h-full flex flex-row-reverse items-center bg-tertiary"
+    >
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid
-        hover:bg-secondary hover:text-white active:text-secondary transition-all duration-500
-        border-white w-1/2 h-full grid content-center justify-center bg-primary text-black shadow-sm shadow-black"
+        hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
+        border-white w-1/2 h-full grid content-center justify-center bg-secondary text-white shadow-sm shadow-black"
         id="sql-link">SQL<br /><span>2023</span></a
       >
     </div>
-    <div id="sql-space" class="w-full h-full transition-all duration-500"></div>
+    <div
+      id="sql-space"
+      class="w-full h-full transition-all duration-500 bg-tertiary"
+    >
+    </div>
   </div>
 </section>
 <style>
@@ -52,7 +71,6 @@
       setTimeout(() => {
         document.getElementById("sql-label").classList.remove("w-full");
         document.getElementById("sql-label").classList.add("w-1/2");
-        document.getElementById("sql-content").classList.remove("text-white");
       }, 150);
       setTimeout(() => {
         sqlSpace.classList.remove("h-full");
@@ -63,7 +81,6 @@
 
   // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
-    document.getElementById("sql-content").classList.add("text-white");
     sqlSpace.classList.remove("h-0");
     sqlSpace.classList.add("h-full");
     sqlLink.classList.remove("w-full");
