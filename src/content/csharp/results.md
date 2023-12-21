@@ -1,6 +1,6 @@
 The results are not very impressive.
 
-We were not able to develop a solution that included a Mobile Application within the deadline.
+We were not able to develop a solution that included a functional Mobile Application within the deadline.
 
 A Web Application was functional, but still did not meet the client's expectations.
 
