@@ -27,7 +27,7 @@ There is now a folder for each section `./content/{about,csharp,education,php,po
 
 I might have installed the @astrojs/mdx plugin unnecessarily here.
 
-Was just offered a shift at work. I've already lost almost 7 hours of alert function to work this week. I have non-work obligations that prevents me from declining. We have less than 3 hours of work remaining for day 3.5.
+Was just offered a shift at work. I've already lost almost 7 hours of alert function to work this week. I have non-work obligations that prevents me from declining. We have less than 3 hours of work remaining for day 4.5.
 
 Anyway, let's look into Markdown.
 
