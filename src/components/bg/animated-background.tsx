@@ -15,8 +15,15 @@ class ImagePreloader {
     img.onload = () => this.loadedImages.add(imageIndex);
   }
 }
+type ImageTransitionProps = {
+  imageIndex: number;
+  transitionDuration: number;
+};
 
-const ImageTransition = ({ imageIndex, transitionDuration }) => (
+const ImageTransition: React.FC<ImageTransitionProps> = ({
+  imageIndex,
+  transitionDuration,
+}) => (
   <motion.div
     key={imageIndex}
     className="absolute top-4 left-4 right-4 bottom-4 w-[calc(100vw-2rem)] h-[calc-100vh-2rem] bg-cover bg-center"

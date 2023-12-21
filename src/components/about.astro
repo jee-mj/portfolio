@@ -1,41 +1,103 @@
 ---
 import Content from "./content.astro";
-import MainText from "../content/about/main-text.md";
-import MainTitle from "../content/about/main-title.md";
-import MainSubtext from "../content/about/main-subtext.md";
-import AstroText from "../content/about/astro-text.md";
+import Hypothesis from "../content/about/hypothesis.md";
+import Aim from "../content/about/aim.md";
+import Tools from "../content/about/tools.md";
+import Method from "../content/about/method.md";
+import Results from "../content/about/results.md";
+import Notes from "../content/about/notes.md";
+
+import AstroText from "../content/about/tools/astro.md";
 ---
 
 <section class="w-full h-full flex-row z-20 hidden" id="about">
   <div
-    class="w-full h-[calc(100vh-2rem)] my-4 ml-4 transition-all duration-100 inline-block overflow-y-auto z-20 bg-none"
+    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 ml-4 transition-all duration-100 flex flex-row-reverse overflow-y-auto z-20 bg-none"
     id="about-content"
   >
     <Content>
       <div
-        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
       >
-        <MainTitle />
+        Greetings traveler.
       </div>
       <div
-        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+        class="text-2xl font-bold tracking-tight text-white section-content transition-all duration-50"
       >
-        <MainText />
+        Hypothesis
       </div>
       <div
-        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Hypothesis />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        Aim
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Aim />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        Tools
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Tools />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-white section-content transition-all duration-50"
       >
         Astro
       </div>
       <div
-        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
       >
         <AstroText />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        Method
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Method />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        Results
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Results />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        Notes
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Notes />
       </div>
     </Content>
   </div>
   <div
-    class="w-full h-full flex flex-col p-4 pl-0 transition-all duration-500 z-50"
+    class="w-full xl:max-w-full xl:w-full h-full flex flex-col p-4 pl-0 transition-all duration-500 z-50"
     id="about-label"
   >
     <div id="topRight" class="w-full h-full flex flex-row items-center">

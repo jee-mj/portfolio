@@ -1,0 +1,1 @@
+Framer-Motion is a really bulky but really versatile package that pulls a `react` dependency into the project. It's used for the slowly morphing background.

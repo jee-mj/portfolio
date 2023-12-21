@@ -35,7 +35,17 @@ To ensure that the design is not distracting users from the content, I've remove
 V2 will have some major refactoring required however, the purpose of this V1 is to create something that is functional so that I can start applying to places ASAP.
 
 ```md
-# TODO: Feature
+# TODO: Features
 
-Add parallax effect to the background on clicking an element
+1. Add parallax effect to the background on clicking an element
+2. The current version of the site is what I want design wise, and will be archived in `archive` branch.
+  - Specifically, how the Portfolio / Signature pages are designed.
 ```
+
+I'm about to kill my favourite feature of the website so that I can have it be functional. I can continue to work on this any time in the future. Right now, what's important is deadlines and core features. As long as these are met, then it's okay.
+
+I'm not sure what is better, a JSON file, or this file/folder structure I have currently. Maybe some people really like writing in JSON, but because of the volume of different things I am having to consider for this, markdown works a lot better for my purposes.
+
+All things considered, Markdown is a lot better for this vs JSON. JSON _might_ be a little better in transit.
+
+I'm going to commit, backup `dev-mj` to archive and take another break.

@@ -1,0 +1,1 @@
+The website was functional and the client was happy to proceed with the QA plan.
