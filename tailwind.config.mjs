@@ -22,9 +22,10 @@ export default {
         smooch: ["Smooch Sans", "sans-serif"],
       },
       colors: {
-        primary: "#ffcd0099",
+        primary: "#ffcd00",
+        "primary-transparent": "#ffcd0099",
         secondary: "#012169",
-        'secondary-transparent': "#01216955",
+        "secondary-transparent": "#01216955",
         tertiary: "#070707ff",
         danger: "#f6511d",
         success: "#2ecf63",

@@ -1,24 +1,101 @@
 ---
-import MainText from "../content/education/main-text.md";
-import MainTitle from "../content/education/main-title.md";
 import Content from "./content.astro";
+
+import Oaklee from "../content/education/oaklee/overview.md";
+import Digital from "../content/education/oaklee/major/digital.md";
+import Songwriting from "../content/education/oaklee/major/songwriting.md";
+import World from "../content/education/oaklee/major/world.md";
+import WIT from "../content/education/wit/overview.md";
+import Code from "../content/education/wit/major/code.md";
+import Data from "../content/education/wit/major/data.md";
+import Web from "../content/education/wit/major/web.md";
 ---
 
 <section class="w-full h-full flex-row z-20 hidden" id="education">
   <div
-    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-20 bg-none"
+    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-40 bg-none"
     id="education-content"
   >
     <Content>
       <div
-        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
       >
-        <MainTitle />
+        Bachelor of Music at Oaklee
       </div>
       <div
-        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
       >
-        <MainText />
+        <Oaklee />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Digital music production techniques
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Digital />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Modern writing and poetry
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Songwriting />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Music around the world
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <World />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Bachelor of IT at WIT
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <WIT />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Advanced programming
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Code />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Data Analysis
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Data />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Software Engineering
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Web />
       </div>
     </Content>
   </div>

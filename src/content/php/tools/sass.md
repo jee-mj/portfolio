@@ -1,0 +1,1 @@
+SASS is a CSS extension language that adds a plethora of features on top. It was used to viciously adhere to DRY.

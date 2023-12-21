@@ -1,0 +1,2 @@
+Developed a cross-platform mobile application, focusing on efficient code structure and responsive design.
+Actively contributed to several open-source projects, gaining experience in collaborative coding and version control systems.

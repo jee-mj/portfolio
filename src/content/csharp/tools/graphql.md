@@ -1,0 +1,1 @@
+GraphQL is a query language for APIs, and a server-side runtime for executing queries using a defined schema. It isn't tied to any specific database or storage engine and is instead backed by existing code and data.

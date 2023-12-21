@@ -1,0 +1,2 @@
+`Balinese Gamelan` - Colourful textures of hypnotic interlocking pitched beats driven by a hard hitting bass.
+`Irish Folk` - Holds Aeolian, Dorian, and Mixolydian toned treasures in jovial rhythms such as 3/4 and 6/8.

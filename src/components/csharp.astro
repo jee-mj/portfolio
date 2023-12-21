@@ -2,6 +2,17 @@
 import MainText from "../content/csharp/main-text.md";
 import MainTitle from "../content/csharp/main-title.md";
 import Content from "./content.astro";
+
+import Hypothesis from "../content/csharp/hypothesis.md";
+import Aim from "../content/csharp/aim.md";
+import Tools from "../content/csharp/tools.md";
+import Method from "../content/csharp/method.md";
+import Results from "../content/csharp/results.md";
+import Notes from "../content/csharp/notes.md";
+
+import Bootstrap from "../content/csharp/tools/bootstrap.md";
+import EntityFramework from "../content/csharp/tools/entityframework.md";
+import GraphQL from "../content/csharp/tools/graphql.md";
 ---
 
 <section class="w-full h-full flex-row z-20 hidden" id="csharp">
@@ -13,31 +24,127 @@ import Content from "./content.astro";
     </div>
     <div
       id="bottomLeft"
-      class="w-full xl:max-w-full xl:w-full h-full flex flex-row items-center"
+      class="w-full xl:max-w-full xl:w-full h-full flex flex-row-reverse items-center"
     >
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid
-        hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
-        border-white w-1/2 h-full grid content-center justify-center bg-secondary-transparent text-white shadow-sm shadow-black"
+      hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
+      border-white w-1/2 h-full grid content-center justify-center bg-secondary-transparent text-white shadow-sm shadow-black"
         id="csharp-link">C#<br /><span>2022</span></a
       >
     </div>
   </div>
   <div
-    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-20 bg-none"
+    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-40 bg-none"
     id="csharp-content"
   >
     <Content>
       <div
-        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
       >
-        <MainTitle />
+        Abstract
       </div>
       <div
-        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
       >
-        <MainText />
+        This is a static portfolio web application built with Astro, Tailwind,
+        and Framer. It attempts to create a seamless, full-screen experience for
+        the user. The site is built with a mobile-first approach, and is fully
+        responsive.
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Hypothesis
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Hypothesis />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Aim
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Aim />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Tools
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Tools />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Bootstrap
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Bootstrap />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        EntityFramework
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <EntityFramework />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        GraphQL
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <GraphQL />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Method
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Method />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Results
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Results />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Notes
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Notes />
       </div>
     </Content>
   </div>
@@ -73,7 +180,6 @@ import Content from "./content.astro";
 
     // Event listener for section unload
     document.addEventListener("sectionUnloadEvent", function () {
-      setTimeout(() => {}, 1000);
       csharpSpace!.classList.remove("h-0");
       csharpSpace!.classList.add("h-full");
       csharpLink!.classList.remove("w-full");

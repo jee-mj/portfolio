@@ -1,0 +1,1 @@
+Writing compelling music that touches hearts and helps others express themselves with complimentary accompaniment.

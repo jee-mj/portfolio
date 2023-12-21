@@ -1,0 +1,1 @@
+Bootstrap is an all-in-one UI solution that can be extended using CSS language extensions if desired. It manages javascript code to simplify creating UI components such as accordions and simple animations. 

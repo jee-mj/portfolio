@@ -3,6 +3,7 @@
   #earth-canvas {
     width: clamp(4rem, 16rem, 33vw);
     height: clamp(4rem, 16rem, 33vw);
+    pointer-events: none;
   }
   .hidden-video {
     position: absolute;
@@ -13,12 +14,12 @@
 </style>
 <canvas
   id="earth-canvas"
-  class="absolute z-20"
+  class="absolute z-30"
   style="left: clamp(2rem, 22vw, 36vw); bottom: clamp(2rem, 16vh, 28vh);"
 ></canvas>
 <canvas
   id="mars-canvas"
-  class="absolute z-20"
+  class="absolute z-30"
   style="right: clamp(2rem, 6vw, 8vw); top: clamp(2rem, 13vh, 16vh);"></canvas>
 <video
   muted

@@ -2,6 +2,17 @@
 import MainText from "../content/php/main-text.md";
 import MainTitle from "../content/php/main-title.md";
 import Content from "./content.astro";
+
+import Hypothesis from "../content/php/hypothesis.md";
+import Aim from "../content/php/aim.md";
+import Tools from "../content/php/tools.md";
+import Method from "../content/php/method.md";
+import Results from "../content/php/results.md";
+import Notes from "../content/php/notes.md";
+
+import SASS from "../content/php/tools/sass.md";
+import Laravel from "../content/php/tools/laravel.md";
+import LAMP from "../content/php/tools/lamp.md";
 ---
 
 <section class="w-full h-full flex-row z-20 hidden" id="php">
@@ -21,19 +32,115 @@ import Content from "./content.astro";
     </div>
   </div>
   <div
-    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-20 bg-none"
+    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-40 bg-none"
     id="php-content"
   >
     <Content>
       <div
-        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
       >
-        <MainTitle />
+        Abstract
       </div>
       <div
-        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
       >
-        <MainText />
+        This is a static portfolio web application built with Astro, Tailwind,
+        and Framer. It attempts to create a seamless, full-screen experience for
+        the user. The site is built with a mobile-first approach, and is fully
+        responsive.
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Hypothesis
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Hypothesis />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Aim
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Aim />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Tools
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Tools />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        SASS
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <SASS />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Laravel
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Laravel />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        LAMP
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <LAMP />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Method
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Method />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Results
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Results />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Notes
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Notes />
       </div>
     </Content>
   </div>

@@ -24,6 +24,7 @@ import Education from "../components/education.astro";
   <div class="w-full h-full flex flex-col p-4 pr-0 z-20" id="left">
     <div id="topLeft" class="w-full h-full flex flex-col items-center">
       <a
+        tabindex="0"
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
@@ -33,6 +34,7 @@ import Education from "../components/education.astro";
         id="portfolio-link">Portfolio</a
       >
       <a
+        tabindex="1"
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
@@ -44,6 +46,7 @@ import Education from "../components/education.astro";
     </div>
     <div id="bottomLeft" class="w-full h-full flex flex-row items-center">
       <a
+        tabindex="2"
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
@@ -53,6 +56,7 @@ import Education from "../components/education.astro";
         id="php-link">PHP<br /><span>2023</span></a
       >
       <a
+        tabindex="3"
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
@@ -66,6 +70,7 @@ import Education from "../components/education.astro";
   <div class="w-full h-full flex flex-col p-4 pl-0 z-20" id="right">
     <div id="topRight" class="w-full h-full flex flex-row items-center">
       <a
+        tabindex="4"
         style="font-size: clamp(2em, 5vw, 4em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
@@ -75,6 +80,7 @@ import Education from "../components/education.astro";
         id="about-link">About</a
       >
       <a
+        tabindex="5"
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
@@ -86,6 +92,7 @@ import Education from "../components/education.astro";
     </div>
     <div id="bottomRight" class="w-full h-full flex flex-col items-center">
       <a
+        tabindex="6"
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
@@ -95,6 +102,7 @@ import Education from "../components/education.astro";
         id="education-link">Study</a
       >
       <a
+        tabindex="7"
         style="font-size: clamp(2em, 5vw, 4em); padding-right: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white
@@ -185,6 +193,11 @@ import Education from "../components/education.astro";
     });
     linkElement.addEventListener("touchstart", toggleComponentVisibility, {
       passive: true,
+    });
+    linkElement.addEventListener("keypress", function (event) {
+      if (event instanceof KeyboardEvent && event.key === "Enter") {
+        toggleComponentVisibility(event);
+      }
     });
   });
 </script>

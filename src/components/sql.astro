@@ -2,23 +2,130 @@
 import MainText from "../content/sql/main-text.md";
 import MainTitle from "../content/sql/main-title.md";
 import Content from "./content.astro";
+
+import Hypothesis from "../content/sql/hypothesis.md";
+import Aim from "../content/sql/aim.md";
+import Tools from "../content/sql/tools.md";
+import Method from "../content/sql/method.md";
+import Results from "../content/sql/results.md";
+import Notes from "../content/sql/notes.md";
+
+import PowerBI from "../content/sql/tools/powerbi.md";
+import DrawIO from "../content/sql/tools/drawio.md";
+import Redis from "../content/sql/tools/redis.md";
 ---
 
 <section class="w-full h-full flex-row z-20 hidden" id="sql">
   <div
-    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-20 bg-none"
+    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-40 bg-none"
     id="sql-content"
   >
     <Content>
       <div
-        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
       >
-        <MainTitle />
+        Abstract
       </div>
       <div
-        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
       >
-        <MainText />
+        This is a static portfolio web application built with Astro, Tailwind,
+        and Framer. It attempts to create a seamless, full-screen experience for
+        the user. The site is built with a mobile-first approach, and is fully
+        responsive.
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Hypothesis
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Hypothesis />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Aim
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Aim />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Tools
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Tools />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        PowerBI
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <PowerBI />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Draw.IO
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <DrawIO />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Redis
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Redis />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Method
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Method />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Results
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Results />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Notes
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Notes />
       </div>
     </Content>
   </div>
