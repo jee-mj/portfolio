@@ -2,6 +2,7 @@
 import MainText from "../content/about/main-text.md";
 import MainTitle from "../content/about/main-title.md";
 import MainSubtext from "../content/about/main-subtext.md";
+import AstroText from "../content/about/astro-text.md";
 ---
 
 <section class="w-full h-full flex-row z-20 hidden" id="about">
@@ -15,13 +16,19 @@ import MainSubtext from "../content/about/main-subtext.md";
           <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
             <div class="xl:flex xl:flex-row">
               <div
-                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
+                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0 pr-4"
               >
                 <div class="text-3xl font-bold tracking-tight text-white">
                   <MainTitle />
                 </div>
-                <div class="mt-6 mb-16 text-lg leading-8 text-white">
+                <div class="mt-6 mb-16 text-md leading-8 text-white">
                   <MainText />
+                </div>
+                <div class="text-3xl font-bold tracking-tight text-white">
+                  Astro: The web framework for content-driven websites
+                </div>
+                <div class="mt-6 mb-16 text-md leading-8 text-white">
+                  <AstroText />
                 </div>
               </div>
             </div>

@@ -1,1 +1,1 @@
-How to act smart while sounding stupid
+Website Purpose

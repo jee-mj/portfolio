@@ -26,7 +26,7 @@ const ImageTransition = ({ imageIndex, transitionDuration }) => (
     initial={{ opacity: 0, filter: "blur(0)" }}
     animate={{ opacity: 1, filter: "blur(0)" }}
     exit={{ opacity: 0, filter: "blur(1rem)" }}
-    transition={{ duration: transitionDuration + transitionDuration + 16 }}
+    transition={{ duration: transitionDuration + transitionDuration + 8 }}
   />
 );
 
@@ -84,7 +84,7 @@ const AnimatedBackground = () => {
 
         return newNextImage;
       });
-    }, 26000);
+    }, 18000);
 
     return () => clearInterval(interval);
   }, []);

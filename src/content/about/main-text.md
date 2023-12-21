@@ -1,1 +1,4 @@
-This portfolio, a static showcase of my capabilities, is complemented by my concurrent focus on enhancing my skills in animation, utilizing both ReactJS-based and TailwindCSS-based techniques. The dynamic transitions between the home page and various sections are crafted using Tailwind, while the animations within each section are achieved using React. 
+This portfolio is built using [Astro](https://astro.build/) on Node.JS.
+
+It uses Tailwind, React, and Framer-Motion. It could have been built using only CSS, but I wanted to work more closely with JavaScript for this project and less with HTML/CSS.
+
