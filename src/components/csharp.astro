@@ -30,35 +30,123 @@ import GraphQL from "../content/csharp/tools/graphql.md";
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid
         hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
-        border-white w-1/2 h-full grid content-center justify-center bg-secondary text-white shadow-sm shadow-black"
+        border-white w-1/2 h-full grid content-center justify-center bg-secondary-transparent text-white shadow-sm shadow-black"
         id="csharp-link">C#<br /><span>2022</span></a
       >
     </div>
   </div>
   <div
-    class="w-full h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 inline-block overflow-y-auto z-20 bg-none"
+    class="w-full h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 inline-block overflow-y-auto z-40 bg-none"
     id="csharp-content"
   >
-    <div class="mb-8 ml-4">
-      <div class="pb-8 pt-4 sm:pb-4">
-        <div class="mx-auto">
-          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
-            <div class="xl:flex xl:flex-row">
-              <div
-                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
-              >
-                <div class="text-3xl font-bold tracking-tight text-white">
-                  <MainTitle />
-                </div>
-                <div class="mt-6 mb-16 text-lg leading-8 text-white">
-                  <MainText />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <Content>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Abstract
       </div>
-    </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        This is a static portfolio web application built with Astro, Tailwind,
+        and Framer. It attempts to create a seamless, full-screen experience for
+        the user. The site is built with a mobile-first approach, and is fully
+        responsive.
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Hypothesis
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Hypothesis />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Aim
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Aim />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Tools
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Tools />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Bootstrap
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Bootstrap />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        EntityFramework
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <EntityFramework />
+      </div>
+      <div
+        class="text-xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        GraphQL
+      </div>
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <GraphQL />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Method
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Method />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Results
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Results />
+      </div>
+      <div
+        class="text-2xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Notes
+      </div>
+
+      <div
+        class="mt-6 mb-4 text-md leading-8 text-white section-content transition-all duration-50"
+      >
+        <Notes />
+      </div>
+    </Content>
   </div>
 
   <style>
