@@ -2,6 +2,7 @@
 import PortfolioCard from "./portfoliocard.astro";
 import MainText from "../content/portfolio/main-text.md";
 import MainTitle from "../content/portfolio/main-title.md";
+import Content from "./content.astro";
 ---
 
 <section class="w-full h-full flex-col hidden z-20" id="portfolio">
@@ -11,13 +12,13 @@ import MainTitle from "../content/portfolio/main-title.md";
   >
     <div
       id="topLeft"
-      class="w-full h-full flex flex-row items-center transition-all duration-200"
+      class="w-full xl:max-w-full xl:w-full h-full flex flex-row items-center transition-all duration-200"
     >
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid shadow-sm hover:w-full
           hover:text-[#ffcd00] hover:border-[#ffcd00] transition-all duration-200
-          bg-secondary text-white border-white shadow-black
+          bg-secondary-transparent text-white border-white shadow-black
           w-1/2 h-full content-center
           grid"
         id="portfolio-link">Portfolio</a
@@ -27,36 +28,27 @@ import MainTitle from "../content/portfolio/main-title.md";
   </div>
   <div
     style="padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
-    class="w-[calc(100vw-2rem)] h-full ml-4 mb-4 text-white bg-none transition-all duration-100 inline-block overflow-y-auto p-4 z-20"
+    class="w-[calc(100vw-2rem)] h-full ml-4 mb-4 text-white bg-none transition-all duration-100 flex flex-row overflow-y-auto p-4 z-20"
     id="portfolio-content"
   >
-    <div class="mb-8 ml-4">
-      <div class="pb-8 pt-4 sm:pb-4">
-        <div class="mx-auto">
-          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
-            <div class="xl:flex xl:flex-row">
-              <div
-                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
-              >
-                <div class="text-3xl font-bold tracking-tight text-white">
-                  <MainTitle />
-                </div>
-                <div class="mt-6 mb-16 text-lg leading-8 text-white">
-                  <MainText />
-                </div>
-              </div>
-
-              <div class="mx-auto w-full xl:mx-0">
-                <h2 class="text-3xl font-bold tracking-tight text-white mb-8">
-                  Technologies
-                </h2>
-                <PortfolioCard />
-              </div>
-            </div>
-          </div>
-        </div>
+    <Content>
+      <div
+        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        <MainTitle />
       </div>
-    </div>
+      <div
+        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+      >
+        <MainText />
+      </div>
+      <div class="mx-auto w-full xl:mx-0">
+        <h2 class="text-3xl font-bold tracking-tight text-white mb-8">
+          Technologies
+        </h2>
+        <PortfolioCard />
+      </div>
+    </Content>
   </div>
 </section>
 
@@ -75,24 +67,24 @@ import MainTitle from "../content/portfolio/main-title.md";
   document.addEventListener("sectionLoadEvent", function () {
     setTimeout(() => {
       // Animate dimensions using tailwind
-      portfolioLink.classList.remove("w-1/2");
-      portfolioLabel.classList.remove("h-[36vh]");
-      portfolioLabel.classList.add("h-1/6");
-      portfolioLink.classList.remove("hover:w-full"); // necessary for expand behaviour
-      portfolioLink.classList.add("w-full");
+      portfolioLink!.classList.remove("w-1/2");
+      portfolioLabel!.classList.remove("h-[36vh]");
+      portfolioLabel!.classList.add("h-1/6");
+      portfolioLink!.classList.remove("hover:w-full"); // necessary for expand behaviour
+      portfolioLink!.classList.add("w-full");
     }, 500);
   });
 
   document.addEventListener("sectionUnloadEvent", function () {
     setTimeout(() => {
-      portfolioLabel.classList.remove("h-1/6");
-      portfolioLabel.classList.add("h-[36vh]");
-      portfolioLink.classList.remove("w-full");
-      portfolioLink.classList.add("w-1/2");
-      document.getElementById("portfolio-label").classList.add("w-full");
-      document.getElementById("portfolio-label").classList.remove("w-1/2");
+      portfolioLabel!.classList.remove("h-1/6");
+      portfolioLabel!.classList.add("h-[36vh]");
+      portfolioLink!.classList.remove("w-full");
+      portfolioLink!.classList.add("w-1/2");
+      document.getElementById("portfolio-label")!.classList.add("w-full");
+      document.getElementById("portfolio-label")!.classList.remove("w-1/2");
       setTimeout(() => {
-        portfolioLink.classList.add("hover:w-full"); // necessary for expand behaviour
+        portfolioLink!.classList.add("hover:w-full"); // necessary for expand behaviour
       }, 1500);
     }, 50);
   });

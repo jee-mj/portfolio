@@ -1,33 +1,26 @@
 ---
 import MainText from "../content/signature/main-text.md";
 import MainTitle from "../content/signature/main-title.md";
+import Content from "./content.astro";
 ---
 
 <section class="w-full h-full flex-col z-20 hidden" id="signature">
   <div
-    class="w-[calc(100vw-2rem)] h-full ml-4 pb-0 text-white transition-all duration-100 inline-block overflow-y-auto z-20 bg-none"
+    class="w-[calc(100vw-2rem)] h-full ml-4 mt-4 pb-0 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-20 bg-none"
     id="signature-content"
   >
-    <div class="mb-8 ml-4">
-      <div class="pb-8 pt-4 sm:pb-4">
-        <div class="mx-auto">
-          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
-            <div class="xl:flex xl:flex-row">
-              <div
-                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
-              >
-                <div class="text-3xl font-bold tracking-tight text-white">
-                  <MainTitle />
-                </div>
-                <div class="mt-6 mb-16 text-lg leading-8 text-white">
-                  <MainText />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <Content>
+      <div
+        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        <MainTitle />
       </div>
-    </div>
+      <div
+        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+      >
+        <MainText />
+      </div>
+    </Content>
   </div>
   <div
     class="w-[calc(100vw-2rem)] h-[36vh] flex flex-row-reverse transition-all duration-500 z-50 mx-4 mb-4"
@@ -40,7 +33,7 @@ import MainTitle from "../content/signature/main-title.md";
         font-smooch border border-solid border-white
         w-1/2 h-full
         grid content-center justify-end
-        bg-secondary text-white shadow-sm shadow-black"
+        bg-secondary-transparent text-white shadow-sm shadow-black"
       id="signature-link">jee-mj</a
     >
     <div id="signature-space" class="h-full w-auto"></div>
@@ -61,23 +54,23 @@ import MainTitle from "../content/signature/main-title.md";
   // Event listener for section load
   document.addEventListener("sectionLoadEvent", function () {
     setTimeout(() => {
-      signatureLink.classList.remove("w-1/2");
-      signatureLink.classList.remove("hover:w-full");
-      signatureLink.classList.add("w-full");
+      signatureLink!.classList.remove("w-1/2");
+      signatureLink!.classList.remove("hover:w-full");
+      signatureLink!.classList.add("w-full");
       setTimeout(() => {}, 150);
     }, 500);
   });
 
   // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
-    signatureLink.classList.remove("w-full");
-    signatureLink.classList.add("w-1/2");
+    signatureLink!.classList.remove("w-full");
+    signatureLink!.classList.add("w-1/2");
     setTimeout(() => {
-      signatureLink.classList.add("hover:w-full");
+      signatureLink!.classList.add("hover:w-full");
     }, 1500);
     document
-      .getElementById("signature-label")
+      .getElementById("signature-label")!
       .classList.add("w-[calc(100vw-2rem)]");
-    document.getElementById("signature-label").classList.remove("w-1/2");
+    document.getElementById("signature-label")!.classList.remove("w-1/2");
   });
 </script>

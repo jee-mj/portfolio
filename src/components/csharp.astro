@@ -1,52 +1,45 @@
 ---
 import MainText from "../content/csharp/main-text.md";
 import MainTitle from "../content/csharp/main-title.md";
+import Content from "./content.astro";
 ---
 
 <section class="w-full h-full flex-row z-20 hidden" id="csharp">
   <div
-    class="w-full h-full flex flex-col p-4 pr-0 transition-all duration-500 z-50"
+    class="w-full xl:max-w-full xl:w-full h-full flex flex-col p-4 pr-0 transition-all duration-500 z-50"
     id="csharp-label"
   >
     <div id="csharp-space" class="w-full h-full transition-all duration-500">
     </div>
     <div
       id="bottomLeft"
-      class="w-full h-full flex flex-row-reverse items-center"
+      class="w-full xl:max-w-full xl:w-full h-full flex flex-row items-center"
     >
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid
         hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
-        border-white w-1/2 h-full grid content-center justify-center bg-secondary text-white shadow-sm shadow-black"
+        border-white w-1/2 h-full grid content-center justify-center bg-secondary-transparent text-white shadow-sm shadow-black"
         id="csharp-link">C#<br /><span>2022</span></a
       >
     </div>
   </div>
   <div
-    class="w-full h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 inline-block overflow-y-auto z-20 bg-none"
+    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-20 bg-none"
     id="csharp-content"
   >
-    <div class="mb-8 ml-4">
-      <div class="pb-8 pt-4 sm:pb-4">
-        <div class="mx-auto">
-          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
-            <div class="xl:flex xl:flex-row">
-              <div
-                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
-              >
-                <div class="text-3xl font-bold tracking-tight text-white">
-                  <MainTitle />
-                </div>
-                <div class="mt-6 mb-16 text-lg leading-8 text-white">
-                  <MainText />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <Content>
+      <div
+        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        <MainTitle />
       </div>
-    </div>
+      <div
+        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+      >
+        <MainText />
+      </div>
+    </Content>
   </div>
 
   <style>
@@ -65,15 +58,15 @@ import MainTitle from "../content/csharp/main-title.md";
     // Event listener for section load
     document.addEventListener("sectionLoadEvent", function () {
       setTimeout(() => {
-        csharpLink.classList.remove("w-1/2");
-        csharpLink.classList.add("w-full");
+        csharpLink!.classList.remove("w-1/2");
+        csharpLink!.classList.add("w-full");
         setTimeout(() => {
-          csharpSpace.classList.remove("h-full");
-          csharpSpace.classList.add("h-0");
+          csharpSpace!.classList.remove("h-full");
+          csharpSpace!.classList.add("h-0");
         }, 150);
         setTimeout(() => {
-          document.getElementById("csharp-label").classList.remove("w-full");
-          document.getElementById("csharp-label").classList.add("w-1/2");
+          document.getElementById("csharp-label")!.classList.remove("w-full");
+          document.getElementById("csharp-label")!.classList.add("w-1/2");
         }, 150);
       }, 500);
     });
@@ -81,12 +74,12 @@ import MainTitle from "../content/csharp/main-title.md";
     // Event listener for section unload
     document.addEventListener("sectionUnloadEvent", function () {
       setTimeout(() => {}, 1000);
-      csharpSpace.classList.remove("h-0");
-      csharpSpace.classList.add("h-full");
-      csharpLink.classList.remove("w-full");
-      csharpLink.classList.add("w-1/2");
-      document.getElementById("csharp-label").classList.add("w-full");
-      document.getElementById("csharp-label").classList.remove("w-1/2");
+      csharpSpace!.classList.remove("h-0");
+      csharpSpace!.classList.add("h-full");
+      csharpLink!.classList.remove("w-full");
+      csharpLink!.classList.add("w-1/2");
+      document.getElementById("csharp-label")!.classList.add("w-full");
+      document.getElementById("csharp-label")!.classList.remove("w-1/2");
     });
   </script>
 </section>

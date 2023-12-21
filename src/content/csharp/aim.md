@@ -1,0 +1,1 @@
+Develop a Web + Mobile experience for Bean Scene using HTML+CSS+JS and the .NET ecosystem.

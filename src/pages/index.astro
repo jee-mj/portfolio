@@ -26,8 +26,8 @@ import Education from "../components/education.astro";
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
-            hover:bg-secondary hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
-            text-[#ffcd00] border-secondary
+            hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
+            text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center
             grid"
         id="portfolio-link">Portfolio</a
@@ -35,8 +35,8 @@ import Education from "../components/education.astro";
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
-            hover:bg-secondary hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
-            text-[#ffcd00] border-secondary
+            hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
+            text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center
             grid"
         id="work-link">Work</a
@@ -46,8 +46,8 @@ import Education from "../components/education.astro";
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
-            hover:bg-secondary hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
-            text-[#ffcd00] border-secondary
+            hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
+            text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-center
             grid"
         id="php-link">PHP<br /><span>2023</span></a
@@ -55,8 +55,8 @@ import Education from "../components/education.astro";
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
-            hover:bg-secondary hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
-            text-[#ffcd00] border-secondary
+            hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
+            text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-center
             grid"
         id="csharp-link">C#<br /><span>2022</span></a
@@ -68,8 +68,8 @@ import Education from "../components/education.astro";
       <a
         style="font-size: clamp(2em, 5vw, 4em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
-            hover:bg-secondary hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
-            text-[#ffcd00] border-secondary
+            hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
+            text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-center
             grid leading-none"
         id="about-link">About</a
@@ -77,8 +77,8 @@ import Education from "../components/education.astro";
       <a
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
-            hover:bg-secondary hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
-            text-[#ffcd00] border-secondary
+            hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
+            text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-center
             grid"
         id="sql-link">SQL<br /><span>2023</span></a
@@ -88,8 +88,8 @@ import Education from "../components/education.astro";
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
-            hover:bg-secondary hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
-            text-[#ffcd00] border-secondary
+            hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
+            text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center
             grid"
         id="education-link">Study</a
@@ -97,8 +97,8 @@ import Education from "../components/education.astro";
       <a
         style="font-size: clamp(2em, 5vw, 4em); padding-right: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid hover:transition-all hover:shadow-sm
-            hover:bg-secondary hover:border-[#ffcd00] hover:shadow-white
-            text-[#ffcd00] border-secondary
+            hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white
+            text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-end
             grid"
         id="signature-link"
@@ -122,7 +122,7 @@ import Education from "../components/education.astro";
   const sectionLoadEvent = new CustomEvent("sectionLoadEvent");
   const sectionUnloadEvent = new CustomEvent("sectionUnloadEvent");
 
-  const toggleComponentVisibility = (event) => {
+  const toggleComponentVisibility = (event: { target: any }) => {
     const clickedLink = event.target;
     const componentId = clickedLink.id.replace("-link", "");
 
@@ -137,8 +137,8 @@ import Education from "../components/education.astro";
         // });
         document.dispatchEvent(sectionLoadEvent);
         setTimeout(() => {
-          document.getElementById("main").classList.remove("flex");
-          document.getElementById("main").classList.add("hidden");
+          document.getElementById("main")!.classList.remove("flex");
+          document.getElementById("main")!.classList.add("hidden");
           sectionToToggle.classList.remove("hidden");
           sectionToToggle.classList.add("flex");
         }, 400);
@@ -154,6 +154,16 @@ import Education from "../components/education.astro";
         }, 1000);
       } else {
         document.dispatchEvent(sectionUnloadEvent);
+        //document.querySelectorAll(".bg-white").forEach((item) => {
+        //  item.classList.remove("bg-white");
+        //  item.classList.add("bg-secondary");
+        //});
+        setTimeout(() => {
+          sectionToToggle.classList.add("hidden");
+          sectionToToggle.classList.remove("flex");
+          document.getElementById("main")!.classList.remove("hidden");
+          document.getElementById("main")!.classList.add("flex");
+        }, 700);
         document.querySelectorAll(".section-content").forEach((e) => {
           e.classList.remove("opacity-100");
           e.classList.add("opacity-0");
@@ -162,16 +172,6 @@ import Education from "../components/education.astro";
           e.classList.remove("bg-tertiary");
           e.classList.add("bg-none");
         });
-        //document.querySelectorAll(".bg-white").forEach((item) => {
-        //  item.classList.remove("bg-white");
-        //  item.classList.add("bg-secondary");
-        //});
-        setTimeout(() => {
-          sectionToToggle.classList.add("hidden");
-          sectionToToggle.classList.remove("flex");
-          document.getElementById("main").classList.remove("hidden");
-          document.getElementById("main").classList.add("flex");
-        }, 400);
       }
     } else {
       console.error(`No section found for ID: ${componentId}`);

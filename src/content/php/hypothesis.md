@@ -1,0 +1,1 @@
+LAMP is a tried and tested, rock-solid stack that can be used to develop any Web Application.

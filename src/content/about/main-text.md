@@ -1,1 +1,0 @@
-This portfolio, a static showcase of my capabilities, is complemented by my concurrent focus on enhancing my skills in animation, utilizing both ReactJS-based and TailwindCSS-based techniques. The dynamic transitions between the home page and various sections are crafted using Tailwind, while the animations within each section are achieved using React. 

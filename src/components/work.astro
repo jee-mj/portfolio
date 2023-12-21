@@ -1,6 +1,7 @@
 ---
 import MainText from "../content/work/main-text.md";
 import MainTitle from "../content/work/main-title.md";
+import Content from "./content.astro";
 ---
 
 <section
@@ -8,7 +9,7 @@ import MainTitle from "../content/work/main-title.md";
   id="work"
 >
   <div
-    class="w-full h-full flex flex-col p-4 pr-0 transition-all duration-500 z-50"
+    class="w-full xl:max-w-full xl:w-full h-full flex flex-col p-4 pr-0 transition-all duration-500 z-50"
     id="work-label"
   >
     <div id="topLeft" class="w-full h-full flex flex-col-reverse items-center">
@@ -16,7 +17,7 @@ import MainTitle from "../content/work/main-title.md";
         style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
         class="font-smooch border border-solid
         hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-200
-        border-white bg-secondary text-white shadow-sm shadow-black
+        border-white bg-secondary-transparent text-white shadow-sm shadow-black
         w-full h-1/2 grid content-center"
         id="work-link">Work</a
       >
@@ -25,29 +26,21 @@ import MainTitle from "../content/work/main-title.md";
     </div>
   </div>
   <div
-    class="w-full h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 inline-block overflow-y-auto z-20 bg-none"
+    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-20 bg-none"
     id="work-content"
   >
-    <div class="mb-8 ml-4">
-      <div class="pb-8 pt-4 sm:pb-4">
-        <div class="mx-auto">
-          <div class="grid grid-cols-1 items-center gap-x-8 gap-y-8">
-            <div class="xl:flex xl:flex-row">
-              <div
-                class="mx-auto w-full xl:mx-0 transition-all section-content duration-200 opacity-0"
-              >
-                <div class="text-3xl font-bold tracking-tight text-white">
-                  <MainTitle />
-                </div>
-                <div class="mt-6 mb-16 text-lg leading-8 text-white">
-                  <MainText />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <Content>
+      <div
+        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        <MainTitle />
       </div>
-    </div>
+      <div
+        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+      >
+        <MainText />
+      </div>
+    </Content>
   </div>
 </section>
 
@@ -66,15 +59,15 @@ import MainTitle from "../content/work/main-title.md";
   // Event listener for section load
   document.addEventListener("sectionLoadEvent", function () {
     setTimeout(() => {
-      workLink.classList.remove("h-1/2");
-      workLink.classList.add("h-full");
+      workLink!.classList.remove("h-1/2");
+      workLink!.classList.add("h-full");
       setTimeout(() => {
-        workSpace.classList.remove("h-full");
-        workSpace.classList.add("h-0");
+        workSpace!.classList.remove("h-full");
+        workSpace!.classList.add("h-0");
       }, 150);
       setTimeout(() => {
-        document.getElementById("work-label").classList.remove("w-full");
-        document.getElementById("work-label").classList.add("w-1/2");
+        document.getElementById("work-label")!.classList.remove("w-full");
+        document.getElementById("work-label")!.classList.add("w-1/2");
       }, 150);
     }, 500);
   });
@@ -82,12 +75,12 @@ import MainTitle from "../content/work/main-title.md";
   // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
     setTimeout(() => {
-      workSpace.classList.remove("h-0");
-      workSpace.classList.add("h-full");
+      workSpace!.classList.remove("h-0");
+      workSpace!.classList.add("h-full");
     }, 150);
-    workLink.classList.remove("h-full");
-    workLink.classList.add("h-1/2");
-    document.getElementById("work-label").classList.add("w-full");
-    document.getElementById("work-label").classList.remove("w-1/2");
+    workLink!.classList.remove("h-full");
+    workLink!.classList.add("h-1/2");
+    document.getElementById("work-label")!.classList.add("w-full");
+    document.getElementById("work-label")!.classList.remove("w-1/2");
   });
 </script>
