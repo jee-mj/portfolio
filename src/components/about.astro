@@ -12,16 +12,24 @@ import AstroText from "../content/about/astro-text.md";
     id="about-content"
   >
     <Content>
-      <div class="text-3xl font-bold tracking-tight text-white">
+      <div
+        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
         <MainTitle />
       </div>
-      <div class="mt-6 mb-16 text-lg leading-8 text-white">
+      <div
+        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+      >
         <MainText />
       </div>
-      <div class="text-3xl font-bold tracking-tight text-white">
-        <MainTitle />
+      <div
+        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+      >
+        Astro
       </div>
-      <div class="mt-6 mb-16 text-lg leading-8 text-white">
+      <div
+        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+      >
         <AstroText />
       </div>
     </Content>
@@ -35,7 +43,7 @@ import AstroText from "../content/about/astro-text.md";
         style="font-size: clamp(2em, 5vw, 4em);"
         class="font-smooch border border-solid
         hover:text-[#ffcd00] hover:border-[#ffcd00] transition-all duration-500
-        bg-secondary text-white border-white shadow-black
+        bg-secondary-transparent text-white border-white shadow-black
         w-1/2 h-full grid content-center justify-center leading-none shadow-sm"
         id="about-link"
       >
@@ -63,26 +71,26 @@ import AstroText from "../content/about/astro-text.md";
   // Event listener for section load
   document.addEventListener("sectionLoadEvent", function () {
     setTimeout(() => {
-      aboutLink.classList.remove("w-1/2");
-      aboutLink.classList.add("w-full");
+      aboutLink!.classList.remove("w-1/2");
+      aboutLink!.classList.add("w-full");
       setTimeout(() => {
-        aboutSpace.classList.remove("h-full");
-        aboutSpace.classList.add("h-0");
+        aboutSpace!.classList.remove("h-full");
+        aboutSpace!.classList.add("h-0");
       }, 150);
       setTimeout(() => {
-        document.getElementById("about-label").classList.remove("w-full");
-        document.getElementById("about-label").classList.add("w-1/2");
+        document.getElementById("about-label")!.classList.remove("w-full");
+        document.getElementById("about-label")!.classList.add("w-1/2");
       }, 150);
     }, 500);
   });
 
   // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
-    aboutSpace.classList.remove("h-0");
-    aboutSpace.classList.add("h-full");
-    aboutLink.classList.remove("w-full");
-    aboutLink.classList.add("w-1/2");
-    document.getElementById("about-label").classList.add("w-full");
-    document.getElementById("about-label").classList.remove("w-1/2");
+    aboutSpace!.classList.remove("h-0");
+    aboutSpace!.classList.add("h-full");
+    aboutLink!.classList.remove("w-full");
+    aboutLink!.classList.add("w-1/2");
+    document.getElementById("about-label")!.classList.add("w-full");
+    document.getElementById("about-label")!.classList.remove("w-1/2");
   });
 </script>
