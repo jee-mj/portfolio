@@ -1,0 +1,1 @@
+Redis powers the e-commerce solution with a custom built in-memory database for the frontend.

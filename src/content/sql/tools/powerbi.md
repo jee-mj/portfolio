@@ -1,0 +1,1 @@
+PowerBI used to visualise past business activities. Provided valuable insight that was used in developing an optimal solution.

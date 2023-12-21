@@ -4,14 +4,14 @@ import MainTitle from "../content/signature/main-title.md";
 import Content from "./content.astro";
 ---
 
-<section class="w-full h-full flex-col z-20 hidden" id="signature">
+<section class="w-full h-full flex-row z-20 hidden" id="signature">
   <div
-    class="w-[calc(100vw-2rem)] h-full ml-4 mt-4 pb-0 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-20 bg-none"
+    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-40 bg-none"
     id="signature-content"
   >
     <Content>
       <div
-        class="text-3xl font-bold tracking-tight text-white section-content transition-all duration-50"
+        class="text-3xl font-bold tracking-tight text-primary section-content transition-all duration-50"
       >
         <MainTitle />
       </div>
@@ -23,20 +23,24 @@ import Content from "./content.astro";
     </Content>
   </div>
   <div
-    class="w-[calc(100vw-2rem)] h-[36vh] flex flex-row-reverse transition-all duration-500 z-50 mx-4 mb-4"
+    class="w-full xl:max-w-full xl:w-full h-full flex flex-col p-4 pl-0 transition-all z-50 duration-500"
     id="signature-label"
   >
-    <a
-      style="font-size: clamp(2em, 5vw, 4em); padding-right: clamp(0.5em,10vw,60em);"
-      class="hover:border-[#ffcd00] hover:text-[#ffcd00]
-        transition-all duration-500 hover:w-full
-        font-smooch border border-solid border-white
-        w-1/2 h-full
-        grid content-center justify-end
-        bg-secondary-transparent text-white shadow-sm shadow-black"
-      id="signature-link">jee-mj</a
+    <div id="signature-space" class="w-full h-full transition-all duration-500">
+    </div>
+    <div
+      id="bottomRight"
+      class="w-full h-full flex flex-col-reverse items-center"
     >
-    <div id="signature-space" class="h-full w-auto"></div>
+      <a
+        style="font-size: clamp(2em, 5vw, 4em); padding-left: clamp(0.5em,10vw,60em); padding-right: clamp(0.5em,10vw,60em);"
+        class="font-smooch border border-solid z-50
+        hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-200
+        border-white bg-secondary-transparent text-white shadow-sm shadow-black
+        w-full h-1/2 grid content-center justify-end"
+        id="signature-link">jee-mj</a
+      >
+    </div>
   </div>
 </section>
 
@@ -50,27 +54,31 @@ import Content from "./content.astro";
 </style>
 <script>
   const signatureLink = document.getElementById("signature-link");
+  const signatureSpace = document.getElementById("signature-space");
 
   // Event listener for section load
   document.addEventListener("sectionLoadEvent", function () {
     setTimeout(() => {
-      signatureLink!.classList.remove("w-1/2");
-      signatureLink!.classList.remove("hover:w-full");
-      signatureLink!.classList.add("w-full");
-      setTimeout(() => {}, 150);
+      signatureLink!.classList.remove("h-1/2");
+      signatureLink!.classList.add("h-full");
+      signatureSpace!.classList.remove("h-full");
+      signatureSpace!.classList.add("h-0");
+      setTimeout(() => {
+        document.getElementById("signature-label")!.classList.remove("w-full");
+        document.getElementById("signature-label")!.classList.add("w-1/2");
+      }, 150);
     }, 500);
   });
 
   // Event listener for section unload
   document.addEventListener("sectionUnloadEvent", function () {
-    signatureLink!.classList.remove("w-full");
-    signatureLink!.classList.add("w-1/2");
     setTimeout(() => {
-      signatureLink!.classList.add("hover:w-full");
-    }, 1500);
-    document
-      .getElementById("signature-label")!
-      .classList.add("w-[calc(100vw-2rem)]");
+      signatureSpace!.classList.remove("h-0");
+      signatureSpace!.classList.add("h-full");
+    }, 150);
+    signatureLink!.classList.remove("h-full");
+    signatureLink!.classList.add("h-1/2");
+    document.getElementById("signature-label")!.classList.add("w-full");
     document.getElementById("signature-label")!.classList.remove("w-1/2");
   });
 </script>

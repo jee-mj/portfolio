@@ -1,0 +1,2 @@
+Created a machine learning model to predict market trends, achieving an accuracy rate of 85%.
+Developed an interactive dashboard for real-time data visualization, improving data-driven decision-making processes.

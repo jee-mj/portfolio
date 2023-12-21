@@ -1,0 +1,2 @@
+Led the development of a cloud-based solution for inventory tracking, utilizing a full-stack approach. Awarded as the best capstone project of the year.
+Designed a suite of automated tests for software validation, enhancing code reliability and reducing manual testing time by 50%.

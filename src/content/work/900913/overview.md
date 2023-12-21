@@ -1,0 +1,1 @@
+Conduct comprehensive market and internal business analysis. Develop strategic plans to increase operational efficiency and profitability.

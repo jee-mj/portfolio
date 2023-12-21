@@ -1,0 +1,1 @@
+Draw.IO can be installed as an extension in VS Code and provides industry standard diagram models such as UML. It also supports importing Mermaid.JS diagrams.
