@@ -40,3 +40,10 @@ I was initially thinking of JSON, but since Astro ships with Markdown, I want to
 The system I am using results in a lot of files, but solves the styling issue without having to delve into documentation too deeply.
 
 Let's sync latest up because I would rather the portfolio to present "WIP" while it is in progress.
+
+## Gotta go
+
+Gotta gotta gotta go...
+
+I've also gotta make sure that the planets can spin at their normal speed again on mobile.
+
