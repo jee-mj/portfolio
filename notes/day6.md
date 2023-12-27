@@ -12,6 +12,8 @@ Day 5 saw the removal of a very annoying function. Certain devices are unable to
 
 I am not hopeful, but it would be wonderful if the buttons from my physical wireframe (which I don't think is necessary for this template anyway, it's more meant to be a tweaker's paradise).
 
+```md
+I found new tech to play with! Today is rest day. Day 6 begins tomorrow, or ~~Monday~~ wednesday.
 ```
-  I found new tech to play with! Today is rest day. Day 6 begins tomorrow, or Monday.
-```
+
+Good thing we're counting days, not tracking dates. Let's begin with Day 6.
