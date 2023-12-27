@@ -19,7 +19,7 @@ import Content from "./content.astro";
         class="font-smooch border border-solid
         hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
         border-white bg-secondary-transparent text-white shadow-sm shadow-black
-        w-full h-1/2 grid content-center"
+        w-full h-1/2 grid content-center link-horizontal"
         id="portfolio-link">Portfolio</a
       >
     </div>
@@ -27,7 +27,7 @@ import Content from "./content.astro";
     </div>
   </div>
   <div
-    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-40 bg-none"
+    class="w-full h-[calc(100%-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-40 bg-none"
     id="portfolio-content"
   >
     <Content>
@@ -50,42 +50,3 @@ import Content from "./content.astro";
     </Content>
   </div>
 </section>
-
-<style>
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-</style>
-<script>
-  const portfolioLink = document.getElementById("portfolio-link");
-  const portfolioSpace = document.getElementById("portfolio-space");
-
-  // Event listener for section load
-  document.addEventListener("sectionLoadEvent", function () {
-    setTimeout(() => {
-      portfolioLink!.classList.remove("h-1/2");
-      portfolioLink!.classList.add("h-full");
-      portfolioSpace!.classList.remove("h-full");
-      portfolioSpace!.classList.add("h-0");
-      setTimeout(() => {
-        document.getElementById("portfolio-label")!.classList.remove("w-full");
-        document.getElementById("portfolio-label")!.classList.add("w-1/2");
-      }, 150);
-    }, 500);
-  });
-
-  // Event listener for section unload
-  document.addEventListener("sectionUnloadEvent", function () {
-    setTimeout(() => {
-      portfolioSpace!.classList.remove("h-0");
-      portfolioSpace!.classList.add("h-full");
-    }, 150);
-    portfolioLink!.classList.remove("h-full");
-    portfolioLink!.classList.add("h-1/2");
-    document.getElementById("portfolio-label")!.classList.add("w-full");
-    document.getElementById("portfolio-label")!.classList.remove("w-1/2");
-  });
-</script>

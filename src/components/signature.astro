@@ -6,7 +6,7 @@ import Content from "./content.astro";
 
 <section class="w-full h-full flex-row z-20 hidden" id="signature">
   <div
-    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 ml-4 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-40 bg-none"
+    class="w-full h-[calc(100%-2rem)] my-4 ml-4 text-white transition-all duration-100 flex flex-row-reverse overflow-y-auto z-40 bg-none"
     id="signature-content"
   >
     <Content>
@@ -37,7 +37,7 @@ import Content from "./content.astro";
         class="font-smooch border border-solid z-50
         hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-200
         border-white bg-secondary-transparent text-white shadow-sm shadow-black
-        w-full h-1/2 grid content-center justify-end"
+        w-full h-1/2 grid content-center justify-end link-horizontal"
         id="signature-link">jee-mj</a
       >
     </div>
@@ -52,33 +52,3 @@ import Content from "./content.astro";
     padding: 0;
   }
 </style>
-<script>
-  const signatureLink = document.getElementById("signature-link");
-  const signatureSpace = document.getElementById("signature-space");
-
-  // Event listener for section load
-  document.addEventListener("sectionLoadEvent", function () {
-    setTimeout(() => {
-      signatureLink!.classList.remove("h-1/2");
-      signatureLink!.classList.add("h-full");
-      signatureSpace!.classList.remove("h-full");
-      signatureSpace!.classList.add("h-0");
-      setTimeout(() => {
-        document.getElementById("signature-label")!.classList.remove("w-full");
-        document.getElementById("signature-label")!.classList.add("w-1/2");
-      }, 150);
-    }, 500);
-  });
-
-  // Event listener for section unload
-  document.addEventListener("sectionUnloadEvent", function () {
-    setTimeout(() => {
-      signatureSpace!.classList.remove("h-0");
-      signatureSpace!.classList.add("h-full");
-    }, 150);
-    signatureLink!.classList.remove("h-full");
-    signatureLink!.classList.add("h-1/2");
-    document.getElementById("signature-label")!.classList.add("w-full");
-    document.getElementById("signature-label")!.classList.remove("w-1/2");
-  });
-</script>

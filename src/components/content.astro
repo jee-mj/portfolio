@@ -15,3 +15,56 @@
     </div>
   </div>
 </div>
+<script>
+  interface SectionEventDetail {
+    componentId: string;
+  }
+
+  // Event listener for section load
+  document.addEventListener("sectionLoadEvent", function (event: Event) {
+    const customEvent = event as CustomEvent<SectionEventDetail>;
+    const componentId = customEvent.detail.componentId;
+    const componentLink = document.getElementById(`${componentId}-link`);
+    const componentSpace = document.getElementById(`${componentId}-space`);
+    const componentLabel = document.getElementById(`${componentId}-label`);
+
+    if (componentLink && componentSpace && componentLabel) {
+      setTimeout(() => {
+        if (componentLink.classList.contains("link-vertical")) {
+          componentLink.classList.replace("w-1/2", "w-full");
+          setTimeout(() => {
+            componentSpace.classList.replace("h-full", "h-0");
+            componentLabel.classList.replace("w-full", "w-1/2");
+          }, 150);
+        } else if (componentLink.classList.contains("link-horizontal")) {
+          componentLink.classList.replace("h-1/2", "h-full");
+          setTimeout(() => {
+            componentSpace.classList.replace("h-full", "h-0");
+            componentLabel.classList.replace("w-full", "w-1/2");
+          }, 150);
+        }
+      }, 500);
+    }
+  });
+
+  // Event listener for section unload
+  document.addEventListener("sectionUnloadEvent", function (event: Event) {
+    const customEvent = event as CustomEvent<SectionEventDetail>;
+    const componentId = customEvent.detail.componentId;
+    const componentSpace = document.getElementById(`${componentId}-space`);
+    const componentLink = document.getElementById(`${componentId}-link`);
+    const componentLabel = document.getElementById(`${componentId}-label`);
+
+    if (componentLink && componentSpace && componentLabel) {
+      if (componentLink.classList.contains("link-vertical")) {
+        componentLink.classList.replace("w-full", "w-1/2");
+        componentLabel.classList.replace("w-1/2", "w-full");
+        componentSpace.classList.replace("h-0", "h-full");
+      } else if (componentLink.classList.contains("link-horizontal")) {
+        componentSpace.classList.replace("h-0", "h-full");
+        componentLink.classList.replace("h-full", "h-1/2");
+        componentLabel.classList.replace("w-1/2", "w-full");
+      }
+    }
+  });
+</script>

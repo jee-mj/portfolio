@@ -26,13 +26,13 @@ import LAMP from "../content/php/tools/lamp.md";
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid
         hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
-        border-white w-1/2 h-full grid content-center justify-center bg-secondary-transparent text-white shadow-sm shadow-black"
+        border-white w-1/2 h-full grid content-center justify-center bg-secondary-transparent text-white shadow-sm shadow-black link-vertical"
         id="php-link">PHP<br /><span>2023</span></a
       >
     </div>
   </div>
   <div
-    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-40 bg-none"
+    class="w-full h-[calc(100%-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-40 bg-none"
     id="php-content"
   >
     <Content>
@@ -145,43 +145,3 @@ import LAMP from "../content/php/tools/lamp.md";
     </Content>
   </div>
 </section>
-
-<style>
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-</style>
-
-<script>
-  const phpLink = document.getElementById("php-link");
-  const phpSpace = document.getElementById("php-space");
-
-  // Event listener for section load
-  document.addEventListener("sectionLoadEvent", function () {
-    setTimeout(() => {
-      phpLink!.classList.remove("w-1/2");
-      phpLink!.classList.add("w-full");
-      setTimeout(() => {
-        phpSpace!.classList.remove("h-full");
-        phpSpace!.classList.add("h-0");
-      }, 150);
-      setTimeout(() => {
-        document.getElementById("php-label")!.classList.remove("w-full");
-        document.getElementById("php-label")!.classList.add("w-1/2");
-      }, 150);
-    }, 500);
-  });
-
-  // Event listener for section unload
-  document.addEventListener("sectionUnloadEvent", function () {
-    phpSpace!.classList.remove("h-0");
-    phpSpace!.classList.add("h-full");
-    phpLink!.classList.remove("w-full");
-    phpLink!.classList.add("w-1/2");
-    document.getElementById("php-label")!.classList.add("w-full");
-    document.getElementById("php-label")!.classList.remove("w-1/2");
-  });
-</script>

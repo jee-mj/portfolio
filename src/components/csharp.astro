@@ -30,13 +30,13 @@ import GraphQL from "../content/csharp/tools/graphql.md";
         style="font-size: clamp(2em, 5vw, 4em); gap: clamp(1em, 20vh,10em);"
         class="font-smooch border border-solid
         hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-500
-        border-white w-1/2 h-full grid content-center justify-center bg-secondary-transparent text-white shadow-sm shadow-black"
+        border-white w-1/2 h-full grid content-center justify-center bg-secondary-transparent text-white shadow-sm shadow-black link-vertical"
         id="csharp-link">C#<br /><span>2022</span></a
       >
     </div>
   </div>
   <div
-    class="w-full h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 inline-block overflow-y-auto z-40 bg-none"
+    class="w-full h-[calc(100%-2rem)] my-4 mr-4 text-white transition-all duration-100 inline-block overflow-y-auto z-40 bg-none"
     id="csharp-content"
   >
     <Content>
@@ -148,45 +148,4 @@ import GraphQL from "../content/csharp/tools/graphql.md";
       </div>
     </Content>
   </div>
-
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-
-  <script>
-    const csharpLink = document.getElementById("csharp-link");
-    const csharpSpace = document.getElementById("csharp-space");
-
-    // Event listener for section load
-    document.addEventListener("sectionLoadEvent", function () {
-      setTimeout(() => {
-        csharpLink!.classList.remove("w-1/2");
-        csharpLink!.classList.add("w-full");
-        setTimeout(() => {
-          csharpSpace!.classList.remove("h-full");
-          csharpSpace!.classList.add("h-0");
-        }, 150);
-        setTimeout(() => {
-          document.getElementById("csharp-label")!.classList.remove("w-full");
-          document.getElementById("csharp-label")!.classList.add("w-1/2");
-        }, 150);
-      }, 500);
-    });
-
-    // Event listener for section unload
-    document.addEventListener("sectionUnloadEvent", function () {
-      setTimeout(() => {}, 1000);
-      csharpSpace!.classList.remove("h-0");
-      csharpSpace!.classList.add("h-full");
-      csharpLink!.classList.remove("w-full");
-      csharpLink!.classList.add("w-1/2");
-      document.getElementById("csharp-label")!.classList.add("w-full");
-      document.getElementById("csharp-label")!.classList.remove("w-1/2");
-    });
-  </script>
 </section>

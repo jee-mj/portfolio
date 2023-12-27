@@ -17,3 +17,23 @@ I found new tech to play with! Today is rest day. Day 6 begins tomorrow, or ~~Mo
 ```
 
 Good thing we're counting days, not tracking dates. Let's begin with Day 6.
+
+I've done most of the refactoring, which required re-calculating a bunch of timings since paths are not locking like before.
+
+Problem: Causes my phone to overheat when I am testing the website for 10 minutes. No doubt, it will overheat in the hands of anybody given the content is supposed to take 5-15 minutes to get through, and 30 minutes+ when browsing. The JS should be aware of when the window is no longer in focus.
+
+Solution:
+Well, let's have a function that looks at the device screen size, and uses according bg image set.
+
+While trying to setup a solution for debugging the development environment on another device, I accidentally broke my zfs on my setup, which was abruptly nuked before the end of it's lifecycle to continue this project as it didn't contain anything major.
+
+```bash
+mj@URIEL:~$ ls -la /boot/
+total 149304
+drwxr-xr-x  5 root root      4096 Dec 26 23:21 .
+drwxr-xr-x 21 root root      4096 Dec 26 23:39 ..
+```
+
+See it for what it is. A great deal of pain and suffering.
+
+Since I've lost the background assets it's time to generate 8888 variations, and carefully select the correct ones.
