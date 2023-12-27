@@ -19,3 +19,10 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Modify Assets Output Folder
+public/assets/background/out/
+
+# clean assets folder
+public/assets/background/backgroundResizer.sh
+public/assets/background/bg.jpeg

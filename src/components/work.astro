@@ -26,7 +26,7 @@ import Content from "./content.astro";
         class="font-smooch border border-solid
         hover:border-[#ffcd00] hover:text-[#ffcd00] transition-all duration-200
         border-white bg-secondary-transparent text-white shadow-sm shadow-black
-        w-full h-1/2 grid content-center"
+        w-full h-1/2 grid content-center link-horizontal"
         id="work-link">Work</a
       >
     </div>
@@ -34,7 +34,7 @@ import Content from "./content.astro";
     </div>
   </div>
   <div
-    class="w-full max-w-5xl h-[calc(100vh-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-40 bg-none"
+    class="w-full h-[calc(100%-2rem)] my-4 mr-4 text-white transition-all duration-100 flex flex-row overflow-y-auto z-40 bg-none"
     id="work-content"
   >
     <Content>
@@ -121,44 +121,3 @@ import Content from "./content.astro";
     </Content>
   </div>
 </section>
-
-<style>
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-</style>
-<script>
-  const workLink = document.getElementById("work-link");
-  const workSpace = document.getElementById("work-space");
-
-  // Event listener for section load
-  document.addEventListener("sectionLoadEvent", function () {
-    setTimeout(() => {
-      workLink!.classList.remove("h-1/2");
-      workLink!.classList.add("h-full");
-      setTimeout(() => {
-        workSpace!.classList.remove("h-full");
-        workSpace!.classList.add("h-0");
-      }, 150);
-      setTimeout(() => {
-        document.getElementById("work-label")!.classList.remove("w-full");
-        document.getElementById("work-label")!.classList.add("w-1/2");
-      }, 150);
-    }, 500);
-  });
-
-  // Event listener for section unload
-  document.addEventListener("sectionUnloadEvent", function () {
-    setTimeout(() => {
-      workSpace!.classList.remove("h-0");
-      workSpace!.classList.add("h-full");
-    }, 150);
-    workLink!.classList.remove("h-full");
-    workLink!.classList.add("h-1/2");
-    document.getElementById("work-label")!.classList.add("w-full");
-    document.getElementById("work-label")!.classList.remove("w-1/2");
-  });
-</script>

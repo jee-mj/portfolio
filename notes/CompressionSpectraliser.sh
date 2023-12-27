@@ -6,14 +6,23 @@ mkdir -p out/webm
 mkdir -p out/webm/mars
 mkdir -p out/webm/earth
 # JPEG Compression
-for ((quality=0; quality<=31; quality++)); do
-  # Compress JPEG at different quality levels
-  ffmpeg -i bg.jpg -q:v $quality out/jpg/bg_compressed_$quality.jpg
+for ((quality=0; quality<=100; quality++)); do
+  for i in {1,2,3,4,5,6,9,12,15,20,24}; do
+    # Calculate new dimensions 
+    orig_dim=$(identify -format "%wx%h" bg.jpeg)
+    orig_width=$(echo $orig_dim | cut -dx -f1)
+    orig_height=$(echo $orig_dim | cut -dx -f2)
 
-  # WebP Compression
-  for ((compression_level=0; compression_level<=6; compression_level++)); do
-    # Convert compressed JPEG to WebP
-    ffmpeg -i out/jpg/bg_compressed_$quality.jpg -compression_level $compression_level -q:v $quality out/webp/bg_${quality}_${compression_level}.webp
+    new_width=$(echo "$orig_width * $i / 24" | bc)
+    new_height=$(echo "$orig_height * $i / 24" | bc)
+
+    # Resize and compress the image
+    convert bg.jpeg -resize ${new_width}x${new_height} -quality $quality out/jpg/bg-${new_width}x${new_height}-${quality}.jpg
+    # WebP Compression
+    for ((compression_level=0; compression_level<=6; compression_level++)); do
+      # Convert compressed JPEG to WebP
+      ffmpeg -i out/jpg/bg-${new_width}x${new_height}-$quality.jpg -compression_level $compression_level out/webp/bg-${new_width}x${new_height}-${quality}_${compression_level}.webp
+    done
   done
 done
 
