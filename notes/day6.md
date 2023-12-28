@@ -126,3 +126,5 @@ I can try for V2 when I have some actual free time. There is an outer loop deadl
 So everything needs to be completed by tomorrow. Unfortunately, I have a shift on saturday which makes the likelihood of not having one later today quite high.
 
 I'll sync this current state, then clean up the project as I continue. I hadn't realised how much time off I took over christmas. I actually have no more extensions in terms of workdays so it's important to architect only defined implementations.
+
+There are bigger problems, like the Portfolio page.
