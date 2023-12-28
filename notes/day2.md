@@ -1,3 +1,5 @@
+# Day 2
+
 ```
   RefactorDay
 ```
@@ -14,4 +16,4 @@ It's fine though, astro has further optimisation strategies for everything later
 
 It feels a little redundant, but seeing the static background changes the plan. I'll have a loop of 5 jpeg compressions.
 
-Gotta animate movement. 
+Gotta animate movement.
