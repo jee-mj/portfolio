@@ -29,7 +29,7 @@ import Education from "../components/education.astro";
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
             text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center
-            grid"
+            grid z-50"
           id="portfolio-link">Portfolio</a
         >
         <a
@@ -39,7 +39,7 @@ import Education from "../components/education.astro";
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
             text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center
-            grid"
+            grid z-50"
           id="work-link">Work</a
         >
       </div>
@@ -51,7 +51,7 @@ import Education from "../components/education.astro";
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
             text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-center
-            grid"
+            grid z-50"
           id="php-link">PHP<br /><span>2023</span></a
         >
         <a
@@ -61,7 +61,7 @@ import Education from "../components/education.astro";
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
             text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-center
-            grid"
+            grid z-50"
           id="csharp-link">C#<br /><span>2022</span></a
         >
       </div>
@@ -85,7 +85,7 @@ import Education from "../components/education.astro";
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
             text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-center
-            grid"
+            grid z-50"
           id="sql-link">SQL<br /><span>2023</span></a
         >
       </div>
@@ -97,7 +97,7 @@ import Education from "../components/education.astro";
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white active:text-white transition-all duration-400 hover:duration-500
             text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center
-            grid"
+            grid z-50"
           id="education-link">Study</a
         >
         <a
@@ -107,7 +107,7 @@ import Education from "../components/education.astro";
             hover:bg-secondary-transparent hover:border-[#ffcd00] hover:shadow-white
             text-[#ffcd00] border-secondary-transparent
             w-full h-full content-center justify-end
-            grid"
+            grid z-50"
           id="signature-link"
         >
           WIP</a
@@ -127,14 +127,12 @@ import Education from "../components/education.astro";
     }
   </style>
   <script>
-    // Select elements ending with specific IDs
     const linkElements = document.querySelectorAll('[id$="-link"]');
-    // Function to create a custom event with additional details
+
     const createCustomEvent = (eventName: string, detail: any) => {
       return new CustomEvent(eventName, { detail });
     };
 
-    // Function to toggle visibility of components
     const toggleComponentVisibility = (event: Event) => {
       const clickedLink = event.target as HTMLElement;
       const componentId = clickedLink.id.replace("-link", "");
@@ -145,8 +143,6 @@ import Education from "../components/education.astro";
         return;
       }
 
-      // Toggle classes for visibility and styles
-      const isHidden = sectionToToggle.classList.contains("hidden");
       const toggleClasses = () => {
         sectionToToggle.classList.toggle("hidden");
         sectionToToggle.classList.toggle("flex");
@@ -173,7 +169,6 @@ import Education from "../components/education.astro";
         contentElement && contentElement.classList.toggle("max-w-5xl");
       };
 
-      // Dispatch custom events and perform actions with componentId
       if (sectionToToggle.classList.contains("hidden")) {
         const sectionLoadEvent = createCustomEvent("sectionLoadEvent", {
           componentId,
@@ -195,18 +190,10 @@ import Education from "../components/education.astro";
       }
     };
 
-    // Attach event listeners to link elements
     linkElements.forEach((linkElement) => {
-      ["click", "touchstart"].forEach((eventType) => {
-        linkElement.addEventListener(eventType, toggleComponentVisibility, {
-          passive: true,
-        });
+      linkElement.addEventListener("click", toggleComponentVisibility, {
+        passive: true,
       });
-      // linkElement.addEventListener("keypress", function (event) {
-      //   if (event instanceof KeyboardEvent && event.key === "Enter") {
-      //     toggleComponentVisibility(event);
-      //   }
-      // });
     });
   </script>
 </Layout>

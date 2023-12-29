@@ -128,3 +128,7 @@ So everything needs to be completed by tomorrow. Unfortunately, I have a shift o
 I'll sync this current state, then clean up the project as I continue. I hadn't realised how much time off I took over christmas. I actually have no more extensions in terms of workdays so it's important to architect only defined implementations.
 
 There are bigger problems, like the Portfolio page.
+
+Wow, that was such a bad analogy.
+
+It's infuriating how markup languages can be so clunky.
