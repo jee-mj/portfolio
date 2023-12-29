@@ -1,10 +1,10 @@
+# Day 3
+
 ```
   Couldn't refactor on Day 2 because I started looking at the Animation after completing Day 1 work.
 ```
 
-# The About Page
-
-The about page follows convention and takes a fraction of the screen. The animating elements should be linked to the page heading. 
+The about page follows convention and takes a fraction of the screen. The animating elements should be linked to the page heading.
 
 ## Content Structure
 
@@ -12,16 +12,27 @@ The content structure has already been disemminated in Day 1 as below:
 
 ```md
 # About
+
 ## Hypothesis
+
 ## Aim
+
 ## Tools
+
 ### StackDetails
+
 ### Tailwind CSS
+
 ### React
+
 ### Framer-Motion
+
 ### Github Pages
+
 ## Method
+
 ## Results
+
 ## Author's Notes
 ```
 
@@ -37,6 +48,6 @@ Anyway that's it for what we can label Day 3.
 
 Due to various issues I was jumping back and forth from Linux and Windows.
 
-During this process, it was discovered that Ubuntu Linux + NVIDIA Proprietary Drivers + Firefox seems to composite alpha masked jpegs much better than Windows in general. 
+During this process, it was discovered that Ubuntu Linux + NVIDIA Proprietary Drivers + Firefox seems to composite alpha masked jpegs much better than Windows in general.
 
 It was not scientifically recorded due to stress.

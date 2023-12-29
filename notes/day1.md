@@ -1,3 +1,5 @@
+# Day 1
+
 ```
   Now that we are nicely settled in here. Let's get to action!
 ```
@@ -10,7 +12,7 @@ So there are five days to complete the demo.
 
 1. Later today once awaking, the assets for the main page should be attained. DONE!
 2. Tomorrow, the focus should be on refactoring all the code. I suspect there are some unnecessary divs from the content I frankenstein'd to look pretty with lots of wasted space. Once the code is cleaned up, look into the animations.
-3. Then, work on About page. 
+3. Then, work on About page.
 4. Languages, and work/education (work/education can be mirrored).
 5. Day 5, is reconsidering the colour palette.
 
@@ -57,7 +59,6 @@ So this should be Day 5 considerations, but should be started from Day 2 (tomorr
 Clearing some work up for the About Page:
 
 ```md
-
 # About
 
 ## Hypothesis
@@ -81,7 +82,6 @@ Clearing some work up for the About Page:
 ## Results
 
 ## Author's Notes
-
 ```
 
 That should be fine for the content for now.
@@ -89,7 +89,6 @@ That should be fine for the content for now.
 The Projects should also try to follow this format:
 
 ```md
-
 # C#
 
 ## Hypothesis
@@ -113,11 +112,9 @@ The Projects should also try to follow this format:
 ## Results
 
 ## Author's Notes
-
 ```
 
 ```md
-
 # PHP
 
 ## Hypothesis
@@ -141,11 +138,9 @@ The Projects should also try to follow this format:
 ## Results
 
 ## Author's Notes
-
 ```
 
 ```md
-
 # SQL
 
 ## Hypothesis
@@ -167,7 +162,6 @@ The Projects should also try to follow this format:
 ## Results
 
 ## Author's Notes
-
 ```
 
 I thought about an animated Earth video. I have some assets that are roughly 600 MB in total of animated Earth and Mars.

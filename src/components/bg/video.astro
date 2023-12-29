@@ -67,17 +67,35 @@
       canvas.height = video.videoHeight;
       video.play();
     });
+
+    let lastDrawTime = performance.now();
+    const fps = 60; // Frames per second
+
     video.addEventListener("play", function () {
       const draw = () => {
         if (!ctx || video.paused || video.ended) return;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        processFrame(ctx, canvas.width, canvas.height, colorTarget, threshold);
+        const now = performance.now();
+        const elapsed = now - lastDrawTime;
+
+        if (elapsed > 1000 / fps) {
+          lastDrawTime = now - (elapsed % (1000 / fps));
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          processFrame(
+            ctx,
+            canvas.width,
+            canvas.height,
+            colorTarget,
+            threshold
+          );
+        }
+
         requestAnimationFrame(draw);
       };
       draw();
     });
   }
+
   function processFrame(
     ctx: CanvasRenderingContext2D | null,
     width: number,
@@ -90,13 +108,12 @@
     let data = frame.data;
     let l = data.length / 4;
 
-    // One pass: identify pixels to be made transparent and make them transparent
     for (let i = 0; i < l; i++) {
       let r = data[i * 4 + 0];
       let g = data[i * 4 + 1];
       let b = data[i * 4 + 2];
       if (colorMatches(r, g, b, target, threshold)) {
-        data[i * 4 + 3] = 0; // Set alpha to 0 (transparent)
+        data[i * 4 + 3] = 0;
       }
     }
 
@@ -116,7 +133,7 @@
       Math.abs(b - target[2]) < threshold
     );
   }
-  // Set up video processing for Mars and Earth videos with different thresholds
+
   setupVideoProcessing("mars-video", "mars-canvas", [22, 22, 255], 50);
   setupVideoProcessing("earth-video", "earth-canvas", [233, 0, 81], 50);
 </script>
