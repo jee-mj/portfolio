@@ -110,7 +110,7 @@ import Education from "../components/education.astro";
             grid z-50"
           id="signature-link"
         >
-          WIP</a
+          <span>jee-mj</span></a
         >
       </div>
     </div>
@@ -128,6 +128,10 @@ import Education from "../components/education.astro";
   </style>
   <script>
     const linkElements = document.querySelectorAll('[id$="-link"]');
+
+    const lowFidelity = document.getElementById(
+      "popup-checkbox"
+    ) as HTMLInputElement;
 
     const createCustomEvent = (eventName: string, detail: any) => {
       return new CustomEvent(eventName, { detail });
@@ -174,19 +178,33 @@ import Education from "../components/education.astro";
           componentId,
         });
         document.dispatchEvent(sectionLoadEvent);
-        setTimeout(toggleClasses, 400);
-        setTimeout(toggleOpacity, 450);
-        setTimeout(toggleBackground, 500);
-        setTimeout(toggleMaxWidth, 1150);
+        if (document.querySelector(".transition-none")) {
+          setTimeout(toggleClasses, 0);
+          setTimeout(toggleOpacity, 0);
+          setTimeout(toggleBackground, 0);
+          setTimeout(toggleMaxWidth, 0);
+        } else if (document.querySelector(".transition-all")) {
+          setTimeout(toggleClasses, 400);
+          setTimeout(toggleOpacity, 450);
+          setTimeout(toggleBackground, 500);
+          setTimeout(toggleMaxWidth, 1150);
+        }
       } else {
         const sectionUnloadEvent = createCustomEvent("sectionUnloadEvent", {
           componentId,
         });
         document.dispatchEvent(sectionUnloadEvent);
-        setTimeout(toggleOpacity, 50);
-        setTimeout(toggleMaxWidth, 100);
-        setTimeout(toggleBackground, 500);
-        setTimeout(toggleClasses, 700);
+        if (document.querySelector(".transition-none")) {
+          setTimeout(toggleOpacity, 0);
+          setTimeout(toggleMaxWidth, 0);
+          setTimeout(toggleBackground, 0);
+          setTimeout(toggleClasses, 0);
+        } else if (document.querySelector(".transition-all")) {
+          setTimeout(toggleOpacity, 50);
+          setTimeout(toggleMaxWidth, 100);
+          setTimeout(toggleBackground, 500);
+          setTimeout(toggleClasses, 700);
+        }
       }
     };
 

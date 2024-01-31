@@ -1,1 +1,1 @@
-Bean Scene
+Bean Scene is an exclusive cafe that requires tables to be reserved in advance. They require an online platform to reduce administration costs. This project requires working closely with the organisation using a waterfall approach to develop a tailored application for their needs.

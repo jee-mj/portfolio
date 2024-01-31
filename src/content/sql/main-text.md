@@ -1,1 +1,1 @@
-Anthony's Fast Food is a restaurant looking to sell their food online and deliver to the door.
+Anthony's Fast Food provides cheap and healthy options for consumers from a physical store. They are looking to use a platform such as wordpress for an online experience which integrates home delivery. We have been commissioned to perform data modelling and analysis to develop a system they can use for the final implementation.

@@ -1,5 +1,6 @@
 ---
 import PortfolioCard from "./portfoliocard.astro";
+import PageText from "../content/portfolio/page-text.md";
 import MainText from "../content/portfolio/main-text.md";
 import MainTitle from "../content/portfolio/main-title.md";
 import Content from "./content.astro";
@@ -37,14 +38,28 @@ import Content from "./content.astro";
         <MainTitle />
       </div>
       <div
-        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+        class="mt-6 mb-8 text-lg leading-8 text-white section-content transition-all duration-50"
       >
         <MainText />
       </div>
-      <div class="mx-auto w-full xl:mx-0">
-        <h2 class="text-3xl font-bold tracking-tight text-primary mb-8">
-          Technologies
-        </h2>
+      <div
+        class="text-3xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        It's on GitHub!
+      </div>
+      <div
+        class="mt-6 mb-16 text-lg leading-8 text-white section-content transition-all duration-50"
+      >
+        <PageText />
+      </div>
+      <div
+        class="text-3xl font-bold tracking-tight text-primary section-content transition-all duration-50"
+      >
+        Technologies
+      </div>
+      <div
+        class="mt-4 mb-12 text-lg leading-8 text-white section-content transition-all duration-50"
+      >
         <PortfolioCard />
       </div>
     </Content>

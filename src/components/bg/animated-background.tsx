@@ -97,7 +97,7 @@ const AnimatedBackground = () => {
   }, []);
 
   return (
-    <div className="absolute bg-black top-0 left-0 right-0 bottom-0 w-full h-full z-0">
+    <div className="absolute bg-tertiary top-0 left-0 right-0 bottom-0 w-full h-full z-0">
       <AnimatePresence>
         <ImageTransition
           key={`current-${currentImage}`}

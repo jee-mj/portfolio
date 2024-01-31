@@ -37,8 +37,8 @@ V2 will have some major refactoring required however, the purpose of this V1 is 
 ```md
 # TODO: Features
 
-1. Add parallax effect to the background on clicking an element
-2. The current version of the site is what I want design wise, and will be archived in `archive` branch.
+1. Add parallax effect to the background on clicking an element <!-- Version 2 -->
+2. The current version of the site is what I want design wise, and will be archived in `archive` branch. <!-- A case of Waffling -->
   - Specifically, how the Portfolio / Signature pages are designed.
 ```
 

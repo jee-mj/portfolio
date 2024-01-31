@@ -1,5 +1,6 @@
 ---
-import AnimatedBackground from "../components/bg/index.astro";
+import AnimatedBackground from "../components/bg/bg.astro";
+import Popup from "../components/popup.astro";
 interface Props {
   title: string;
 }
@@ -22,8 +23,33 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="bg-black">
+    <Popup />
     <AnimatedBackground />
+    <script>
+      const background = document.getElementById(
+        "animated-background"
+      ) as HTMLDivElement;
+      const popupForm = document.getElementById("popup") as HTMLFormElement;
+      const lowFidelity = document.getElementById(
+        "popup-checkbox"
+      ) as HTMLInputElement;
+
+      popupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (lowFidelity.checked == true) {
+          background.innerHTML = `
+          <div class="absolute top-4 left-4 right-4 bottom-4 w-[calc(100vw-2rem)] h-[calc-100vh-2rem] bg-cover bg-center bg-[url(/assets/background/bg-2.webp)]">
+          </div>
+          `;
+          document.querySelectorAll(".transition-all").forEach((i) => {
+            i.classList.replace("transition-all", "transition-none");
+          });
+        }
+        popupForm.classList.add("hidden");
+      });
+    </script>
+
     <slot />
     <div
       class="bottom-0 left-[50%] translate-x-[-50%] absolute text-xs text-white"

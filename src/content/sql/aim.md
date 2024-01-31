@@ -1,1 +1,1 @@
-Using Domain Driven Design, capture the system requirements with respect to the SLA with the client.
+Using Domain Driven Design, capture requirements with respect to the SLA with the client.

@@ -1,6 +1,33 @@
-<div class="popup z-50 absolute w-full h-full text-white bg-black" id="popup">
-  This website has animations and visual effects that may cause disorientation.<br
-  />Please check the Low Fidelity box below to disable the features.
-  <checkbox id="popup-checkbox">Low Fidelity</checkbox>
-  <button id="popup-close">Close</button>
-</div>
+<form
+  class="popup z-50 absolute w-full h-full text-white bg-tertiary flex justify-center items-center py-40 px-20"
+  id="popup"
+>
+  <div class="space-y-2 text-xl">
+    <div class="text-primary text-4xl pl-6">Content Warning</div>
+    <br />
+    <br />
+    <p>
+      This website has animations and visual effects that may cause
+      disorientation.
+    </p>
+    <p>Use the checkbox below to toggle motion.</p>
+    <br />
+    <div class="form-row form-row_checkbox flex items-center">
+      <input
+        type="checkbox"
+        name="popup-checkbox"
+        value="popup-checkbox"
+        id="popup-checkbox"
+        class="bg-white text-tertiary rounded-md w-5 h-5"
+      />
+      <label for="popup-checkbox">&nbsp;Low Fidelity</label>
+      <div class="flex-grow"></div>
+      <button
+        id="popup-close"
+        type="submit"
+        class="float-right bg-primary p-4 rounded-lg text-tertiary"
+        >Close</button
+      >
+    </div>
+  </div>
+</form>

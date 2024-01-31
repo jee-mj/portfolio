@@ -1,7 +1,6 @@
-I created this portfolio because I feel that my resume is a little isolated from industry.
+# Greetings to this portfolio made using Astro!
 
-I'm a creative.
+It's using a heavy Framer-Motion to render the background through react, but otherwise is mostly in POJO.
 
-Art is in every nook and cranny of my bones and often I float from project to project and involvement to involvement because I have found something more meaningful there. It's usually never about the money with me unless we are looking at how broke I am thanks to my choices.
+There will be a V2 which I will get around to once I have a shorter to-do list.
 
-That's enough about me for this page. I'll write a nice section about my interests and hobbies in the section titled `jee-mj`.
