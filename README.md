@@ -1,16 +1,16 @@
-# Space Portfolio Template
+# Breakaway Portfolio Experience
 
-A showcase of my projects and skills in web development, design, and programming.
+A template for showcasing projects and skills in a virtual portfolio.
 
 [![View Portfolio](https://img.shields.io/badge/View-Portfolio-blue)](https://jee-mj.github.io/portfolio)
 
 > 🚀 **Ready to explore?** This README provides a guide to the portfolio and highlights key projects.
 
-![Portfolio Preview](https://jee-mj.github.io/portfolio/assets/portfolio_preview.png)
+![Portfolio Preview](https://jee-mj.github.io/portfolio/public/assets/portfolio_preview.png)
 
 ## 🌟 Portfolio Highlights
 
-My portfolio features a truly innovative and custom design built by a human.
+My portfolio features an innovative, custom, design built by a human.
 
 ## 📁 Project Structure
 
@@ -24,7 +24,7 @@ The source code is structured to provide a clear and intuitive navigation experi
 │  │  └─ content.astro
 │  ├─ content/
 │  │  └─ [component]/
-│  │     └─ content.astro
+│  │     └─ [section].md
 │  ├─ layouts/
 │  │  └─ Layout.astro
 │  └─ pages/
